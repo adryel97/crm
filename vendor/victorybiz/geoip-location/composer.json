@@ -1,0 +1,44 @@
+{
+    "name": "victorybiz/geoip-location",
+    "description": "Get the geographical location of website visitors based on their IP addresses. Support Laravel and PHP (Non-Laravel) Project.",
+    "keywords": ["geoip","php","github","laravel","laravel 5", "laravel 6", "laravel 7", "laravel 8","Open Source"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Victory Osayi",
+            "email": "lavictorybiz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.0 || ^7.0",
+        "ipinfo/ipinfo": "^2.2"
+    }, 
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Victorybiz\\GeoIPLocation\\": "src"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Victorybiz\\GeoIPLocation\\GeoIPLocationServiceProvider"
+            ],
+            "aliases": {
+                "GeoIPLocation": "Victorybiz\\GeoIPLocation\\Facades\\GeoIPLocationFacade"
+            }
+        }
+    },
+
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/victoryosayi"
+        }
+    ]
+}
