@@ -9,7 +9,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-    <div class="vw-100 vh-100 bg-dark-secundary">
+    <div class="vw-100 vh-100 bg-dark-secondary">
         <?= $this->section('content');?>
         <?= $this->section("js");?>
     </div>
