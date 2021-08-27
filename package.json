@@ -15,6 +15,7 @@
     "dist": "^0.1.2",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
+    "jquery-validation": "^1.19.3",
     "remixicon": "^2.5.0"
   }
 }
