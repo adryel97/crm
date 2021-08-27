@@ -16,6 +16,6 @@
                         <button class="fw-bold btn btn-primary pt-2 pb-2 ps-3 pe-3 mt-2 text-white">Entrar</button>
                     </div>
             </form>
-            <div class="position-absolute" style="bottom: -35px"><a href="" class="text-primary text-decoration-none">Criar nova conta</a></div>
+            <div class="position-absolute" style="bottom: -35px"><a href="<?=url('register')?>" class="text-primary text-decoration-none">Criar nova conta</a></div>
         </div>
 </div>

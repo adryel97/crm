@@ -3,7 +3,7 @@
 <div class="vw-100 vh-100 d-flex justify-content-center align-items-center">
         <div class="rounded border-top position-relative border-bottom border-primary border-2 bg-dark-primary" style="width: 500px">
             <form action="" class="p-4">
-                    <i class="ri-arrow-left-line text-primary"></i> <h4 class="fw-bold text-primary mb-4"> Cadastro</h4>
+                    <a href="<?=url()?>" class="text-decoration-none"><i class="ri-arrow-left-line text-primary"></i></a> <h4 class="fw-bold text-primary mb-4"> Cadastro</h4>
                     <div>
                         <div class="mb-4">
                             <label class="form-label text-white fw-bold">Nome</label>
@@ -28,9 +28,17 @@
                                     <input type="password" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Confirmar senha">
                                 </div>
                             </div>
-                        </div>  
+                        </div> 
+                        <div class="mb-4">
+                            <div class="form-check text-white">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Eu concordo com os termos de privacidade
+                                </label>
+                            </div>
+                        </div>
                         <button class="fw-bold btn btn-primary pt-2 pb-2 ps-3 pe-3 mt-2 text-white">Confirmar</button>
-                        <button class="text-gray btn btn-dark-secondary pt-2 pb-2 ps-3 pe-3 mt-2">Cancelar</button>
+                        <a href="<?=url()?>" class="text-gray btn btn-dark-secondary pt-2 pb-2 ps-3 pe-3 mt-2">Cancelar</a>
                     </div>
             </form>
         </div>
