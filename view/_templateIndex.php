@@ -9,9 +9,10 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-    <?= $this->section('content');?>
-    <?= $this->section("js");?>
-
+    <div class="vw-100 vh-100 bg-dark-secundary">
+        <?= $this->section('content');?>
+        <?= $this->section("js");?>
+    </div>
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 </body>
 </html>
