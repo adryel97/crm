@@ -13,8 +13,8 @@ class RegisterUser
         $this->view->addData(['router' => $router]);
         $this->router = $router;
     }
-    public function viewLogin()
+    public function viewRegister()
     {
-        echo $this->view->render('register.php');
+        echo $this->view->render('register');
     }
 }

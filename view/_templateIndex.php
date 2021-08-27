@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap-config.css">
+    <link rel="stylesheet" href="node_modules/css.gg/icons/all.css">
+    <link rel="stylesheet" href="node_modules/remixicon/fonts/remixicon.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
 </head>
