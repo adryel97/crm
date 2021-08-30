@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="<?=url()?>/css/style.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/css.gg/icons/all.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="<?=url()?>/node_modules/animate.css/animate.min.css">
     <script src="<?=url()?>/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="<?=url()?>/node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
 </head>
 <body>
@@ -25,6 +28,5 @@
             </section>
         </div>
     </div>
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 </body>
 </html>

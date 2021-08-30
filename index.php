@@ -13,7 +13,7 @@ $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.use
 
 $router->namespace('App\Controller')->group('system');
 $router->post('/', 'LoginUser:loginUser', 'login.user');
-$router->get('/kanban', 'LoginUser:loginUser', 'login.user');
+$router->get('/kanban', 'KanbanPicture:viewPicture', 'kanban.picture');
 $router->dispatch();
 if ($router->error()) {
     echo 'ESSA ROTA NÃO EXISTE AINDA :( ' . $router->error();

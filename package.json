@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.1.0",
     "css.gg": "^2.0.0",
     "dist": "^0.1.2",
