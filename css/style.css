@@ -1,0 +1,15 @@
+.container__content{
+    padding-left: 150px;
+    padding-top: 20px;
+}
+.nav__navgation{
+    width: 115px;
+    position: fixed;
+    left: 20px;
+    height: 95vh;
+    top: 20px;
+}
+.head__header{
+    width: 100%;
+    height: 60px;
+}

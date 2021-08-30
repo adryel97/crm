@@ -10,7 +10,10 @@ $router->get('/', 'LoginUser:viewLogin', 'login.index');
 $router->get('/register', 'RegisterUser:viewRegister');
 $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.user');
 
-$router->post('/system', 'LoginUser:loginUser', 'login.user');
+
+$router->namespace('App\Controller')->group('system');
+$router->post('/', 'LoginUser:loginUser', 'login.user');
+$router->get('/kanban', 'LoginUser:loginUser', 'login.user');
 $router->dispatch();
 if ($router->error()) {
     echo 'ESSA ROTA NÃO EXISTE AINDA :( ' . $router->error();
