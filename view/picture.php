@@ -33,7 +33,7 @@
 <!-- Modal -->
 <div class="modal fade" id="addPicture" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content bg-dark-primary border-0 rounded">
+    <form class="modal-content bg-dark-primary border-0 rounded">
       <div class="modal-header border-1 border-dark-secondary">
         <h5 class="modal-title text-white">Criar novo quadro</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -48,6 +48,10 @@
         <button type="button" class="btn pt-2 pb-2 text-white btn-primary">Salvar</button>
         <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
+
+<?php $this->start('js') ?>
+  <script src="<?=url()?>/js/picture.js"></script>
+<?php $this->end('js') ?>
