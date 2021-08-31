@@ -44,6 +44,7 @@
                             </div>
                         </div>
                         <ul class="content__list m-0 p-0">
+                          <!-- LISTA -->
                             <li class="list-group-item bg-dark-secondary shadow-0 text-white rounded">
                               <div class="d-flex justify-content-between align-items-center mb-2">
                                 <p class="fw-bold m-0">Lista</p>
@@ -54,6 +55,7 @@
                               </p>
                               <span><i class="ri-eye-line"></i></span>
                             </li>
+                            <!-- LISTA -->
                         </ul>
                         <div class="text-center mt-3">
                           <button class="btn btn-default shadow-none">
