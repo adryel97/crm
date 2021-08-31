@@ -18,8 +18,9 @@ $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.use
  */
 $router->namespace('App\Controller')->group('system');
 $router->post('/', 'LoginUser:loginUser', 'login.user');
-$router->get('/kanban', 'KanbanPicture:viewPicture', 'kanban.picture');
+$router->get('/kanban/picture/{id}', 'KanbanPicture:viewPicture', 'kanban.picture');
 $router->post('/kanban/picture/create', 'KanbanPicture:createPicture', 'kanban.pictureCreate');
+$router->post('/kanban/status/create', 'KanbanStatus:createStatus', 'kanban.statusCreate');
 $router->dispatch();
 if ($router->error()) {
     echo 'ESSA ROTA NÃO EXISTE AINDA :( ' . $router->error();

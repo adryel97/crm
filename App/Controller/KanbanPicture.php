@@ -19,9 +19,13 @@ class KanbanPicture
         $this->startUser = User::startUser();
     }
 
-    public function viewPicture()
+    public function viewPicture($data)
     {
-        echo $this->view->render('picture', ['user'=>$this->startUser]);
+        $id = $data['id'];
+        echo $this->view->render('picture', [
+            'user'=>$this->startUser,
+            'idPicture' => $id,
+        ]);
     }
 
     /**

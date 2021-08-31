@@ -6,7 +6,7 @@
             <button class="btn btn-dark-primary fw-bold pt-2 pb-2" type="button" id="dropdownPicture" data-bs-toggle="dropdown" aria-expanded="false">
                 Quadros <i class="ri-arrow-down-s-line"></i>
             </button>
-            <ul style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark  border-0 shadow-none animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownPicture">
+            <ul style="--animate-duration: 0.2s;" class="shadow dropdown-menu dropdown-menu-dark  border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownPicture">
                 <li>
                     <a class="dropdown-item d-flex justify-content-between align-items-center" 
                     data-bs-toggle="modal" data-bs-target="#addPicture" href="#">
@@ -16,7 +16,7 @@
                 <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar quadro <i class="ri-edit-box-line"></i></a></li>
                 <div class="dropdown dropend">
                     <a class="dropdown-item d-flex justify-content-between align-items-center" href="#" id="dropdownMyPicture" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meus Quadros <i class="ri-arrow-right-s-fill"></i></a>
-                    <div class="dropdown-menu dropdown-menu-dark  border-0 shadow-none animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyPicture">
+                    <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark  shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyPicture">
                         <a class="dropdown-item" href="#">Quadro 1</a>
                         <a class="dropdown-item" href="#">Quadro 2</a>
                     </div>
@@ -24,8 +24,34 @@
             </ul>
         </div>
     </div>
-    <div>
-
+    <div class="overflow-auto painelStatus d-flex">
+        <!-- HTML KANBAN --->
+              <div class="d-flex flex-nowrap gx-5 mt-5  pb-3">
+                <div class="m-2 rounded bg-dark-primary border-top border-3 border-green" style="width: 300px;" id="sortable">
+                    <div style="300px" class="p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="text-white fw-bold m-0">Título</h4>
+                            <div class="btn btn-default shadow-none dropdown dropend">
+                              <a id="dropdownMyOptionStatus" class="text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ri-more-2-fill text-white"></i>
+                              </a>
+                                <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyOptionStatus">
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar status <i class="ri-edit-2-line text-yellow"></i></a>
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                      Excluir status <i class="ri-delete-bin-line text-red"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                          <button class="btn btn-default shadow-none">
+                            <h5 class="text-muted fw-bold">Adicionar cartão +</h5>
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- HTML KANBAN --->
     </div>
 </div>
 
@@ -55,12 +81,13 @@
 <!-- Modal -->
 <div class="modal fade" id="addStatus" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <form id="formCreateStatus" action="" class="modal-content bg-dark-primary border-0 rounded">
+    <form id="formCreateStatus" action="<?=$router->route('kanban.statusCreate')?>" class="modal-content bg-dark-primary border-0 rounded">
       <div class="modal-header border-1 border-dark-secondary">
         <h5 class="modal-title text-white">Adicionar novo status</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+            <input type="text" class="d-none" name="fkPicture" value="<?=$idPicture?>">
             <input type="text" class="d-none" name="fkUser" value="<?=$user->id_user?>">
             <div class="mb-4">
                 <label class="form-label text-white fw-bold">Título</label>
@@ -105,4 +132,5 @@
 <?php $this->start('js') ?>
   <script src="<?=url()?>/js/picture.js"></script>
   <script src="<?=url()?>/js/status.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <?php $this->end('js') ?>
