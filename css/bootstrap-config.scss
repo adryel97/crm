@@ -42,14 +42,14 @@ $grays: (
 // scss-docs-start color-variables
 $blue:    #4978FF !default;
 $indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
+$purple:  #A449FF !default;
+$pink:    #FF49D7 !default;
+$red:     #FF4447 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
+$yellow:  #FFDF4C !default;
+$green:   #0FC47A !default;
 $teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$cyan:    #2EE8DD !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -97,6 +97,15 @@ $theme-colors: (
   "dark-primary": $dark-primary,
   "dark-secondary": $dark-secondary,
   "gray":      $gray-500,
+  "blue":     $blue,
+  "purple":   $purple,
+  "pink":     $pink,
+  "red":      $red,
+  "orange":   $orange,
+  "yellow":   $yellow,
+  "green":    $green,
+  "teal":     $teal,
+  "cyan":     $cyan,
 ) !default;
 
 $btn-close-bg:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='rgb(555, 555, 555)' d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;

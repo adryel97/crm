@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="<?=url()?>/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?=url()?>/css/bootstrap-config.css">
     <link rel="stylesheet" href="<?=url()?>/css/style.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/css.gg/icons/all.css">
@@ -13,6 +14,7 @@
     <script src="<?=url()?>/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?=url()?>/node_modules/@popperjs/core/dist/umd/popper.js"></script>
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?=url()?>/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
 </head>
     <body>

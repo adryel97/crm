@@ -29,9 +29,11 @@ class LoginUser
     {
         $_SESSION['email'] = $data['email'];
         $_SESSION['password'] = $data['password'];
+
         $login = $this->user->conectUser();
         if ($login == true) {
-            echo $this->view->render('dashboard');
+            $user = User::startUser();
+            echo $this->view->render('dashboard', ['user' => $user]);
         } else {
             $this->router->redirect(url());
         }

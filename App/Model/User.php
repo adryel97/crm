@@ -41,4 +41,18 @@ class User extends DataLayer
             return false;
         }
     }
+
+    public static function startUser()
+    {
+        $sql = 'SELECT * FROM tbl_user WHERE email_user = ? AND password_user = ?';
+        $content = Connect::getInstance();
+        $con = $content->prepare($sql);
+        $con->bindValue(1, $_SESSION['email']);
+        $con->bindValue(2, md5($_SESSION['password']));
+        $con->execute();
+
+        $userRow = $con->fetch(\PDO::FETCH_OBJ);
+
+        return $userRow;
+    }
 }

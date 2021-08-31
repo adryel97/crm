@@ -1,2 +1,2 @@
-<?php $this->layout('_templateSystem');?>
-
+<?php
+$this->layout('_templateSystem');
