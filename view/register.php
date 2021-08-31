@@ -44,17 +44,6 @@
         </div>
 </div>
 
-<script>
-    $('#createUserForm').submit(function (e) { 
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: $(this).attr('data-action'),
-            data: $(this).serialize(),
-            dataType: "json",
-            success: function (response) {
-                
-            }
-        });
-    });
-</script>
+<?php $this->start('js')?>
+<script src="<?=url()?>/js/user.js"></script>
+<?php $this->end('js')?>
