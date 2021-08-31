@@ -14,8 +14,8 @@
 <body>
     <div class="vw-100 vh-100 bg-dark-secondary">
         <?= $this->section('content');?>
-        <?= $this->section("js");?>
     </div>
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <?= $this->section("js");?>
 </body>
 </html>

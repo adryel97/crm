@@ -15,18 +15,20 @@
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
 </head>
-<body>
-    <div class="vw-100 vh-100 bg-dark-secondary content__main">
-        <div class="container-fluid container__content">
-            <nav class="bg-dark-primary nav__navgation rounded"></nav>
-            
-            <header class="bg-dark-primary rounded head__header">
+    <body>
+        <div class="vw-100 vh-100 bg-dark-secondary content__main">
+            <div class="container-fluid container__content">
+                <nav class="bg-dark-primary nav__navgation rounded"></nav>
+                
+                <header class="bg-dark-primary rounded head__header">
 
-            </header>
-            <section>
-                <?= $this->section('content');?>
-            </section>
+                </header>
+                <section>
+                    <?= $this->section('content');?>
+                </section>
+            </div>
         </div>
-    </div>
-</body>
+        <script src="<?=url()?>/js/config-bootstrap.js"></script>
+        <?= $this->section("js");?>
+    </body>
 </html>
