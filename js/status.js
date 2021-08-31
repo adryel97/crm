@@ -1,5 +1,9 @@
 $(document).ready(function () {
     createStatus();
+
+    $( ".content__list" ).sortable({
+        connectWith: "ul",
+    })
 });
 
 function createStatus()

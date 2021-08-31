@@ -29,7 +29,7 @@
               <div class="d-flex flex-nowrap gx-5 mt-5  pb-3">
                 <div class="m-2 rounded bg-dark-primary border-top border-3 border-green" style="width: 300px;" id="sortable">
                     <div style="300px" class="p-3">
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-white fw-bold m-0">Título</h4>
                             <div class="btn btn-default shadow-none dropdown dropend">
                               <a id="dropdownMyOptionStatus" class="text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,9 +43,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
+                        <ul class="content__list m-0 p-0">
+                            <li class="list-group-item bg-dark-secondary shadow-0 text-white rounded">
+                              <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="fw-bold m-0">Lista</p>
+                                <i class="ri-edit-2-line"></i>
+                              </div>
+                              <p class="m-0 text-truncate w-100" style="font-size: 14px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam luctus molestie. Nullam nec imperdiet urna. Proin vestibulum tortor lacus, et interdum nisi accumsan placerat.
+                              </p>
+                              <span><i class="ri-eye-line"></i></span>
+                            </li>
+                        </ul>
+                        <div class="text-center mt-3">
                           <button class="btn btn-default shadow-none">
-                            <h5 class="text-muted fw-bold">Adicionar cartão +</h5>
+                            <h5 class="text-muted fw-bold m-0">Adicionar cartão +</h5>
                           </button>
                         </div>
                     </div>
