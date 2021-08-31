@@ -45,9 +45,11 @@ CREATE TABLE `tbl_picture` (
   `name_picture` varchar(50) DEFAULT NULL,
   `date_picture` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_picture`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_picture` */
+
+insert  into `tbl_picture`(`id_picture`,`fk_user`,`name_picture`,`date_picture`) values (1,1,'a','2021-08-31 11:04:18'),(2,1,'asdas','2021-08-31 11:10:07'),(3,1,'asdas','2021-08-31 11:10:20');
 
 /*Table structure for table `tbl_status` */
 
@@ -61,9 +63,11 @@ CREATE TABLE `tbl_status` (
   `color_status` varchar(50) DEFAULT NULL,
   `date_status` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_status` */
+
+insert  into `tbl_status`(`id_status`,`fk_picture`,`fk_user`,`name_status`,`color_status`,`date_status`) values (1,3,1,'Novo titulo','purple','2021-08-31 15:11:51');
 
 /*Table structure for table `tbl_task` */
 
@@ -91,13 +95,16 @@ CREATE TABLE `tbl_user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `name_user` varchar(50) NOT NULL,
   `email_user` varchar(60) NOT NULL,
-  `password_user` varchar(20) NOT NULL,
+  `password_user` varchar(100) NOT NULL,
   `accept_user` varchar(10) NOT NULL,
+  `birth_date_user` date DEFAULT NULL,
   `date_register_user` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_user` */
+
+insert  into `tbl_user`(`id_user`,`name_user`,`email_user`,`password_user`,`accept_user`,`birth_date_user`,`date_register_user`) values (1,'Pedroso','pedrinho_foda@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','true','2000-02-20','2021-08-30 15:19:01'),(2,'Tonhão','toinho@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','true','2000-02-20','2021-08-31 10:00:23');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
