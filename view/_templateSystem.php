@@ -25,9 +25,9 @@
                         <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
                             <a href="#" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
-                                    <span class="form-text text-white">Kanban</span>
+                                    <span class="form-text text-white">Tarefas</span>
                             </a>
-                        </li>
+                        </li>   
                         <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
                             <a href="#" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                 <i class="ri-group-line fa-lg"></i>
@@ -36,8 +36,8 @@
                         </li>
                         <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
                             <a href="#" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
-                                <i class="ri-group-line fa-lg"></i>
-                                <span class="form-text text-white">Leads</span>
+                            <i class="ri-line-chart-line fa-lg"></i>
+                                <span class="form-text text-white">Analytics</span>
                             </a>
                         </li>
                     </ul>
