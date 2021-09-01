@@ -40,6 +40,12 @@
                                 <span class="form-text text-white">Analytics</span>
                             </a>
                         </li>
+                        <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
+                            <a href="#" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                            <i class="ri-shopping-cart-2-line fa-lg"></i>
+                                <span class="form-text text-white">Vendas</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 
