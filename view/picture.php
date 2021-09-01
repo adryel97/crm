@@ -26,8 +26,11 @@
     </div>
     <div class="overflow-auto painelStatus d-flex" 
     router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
-    router-status="<?=url('system')?>/kanban/status/<?= $idPicture ?>">
-      
+    router-status="<?=url('system')?>/kanban/status/<?= $idPicture ?>"
+    router-active="<?=$router->route('kanban.alterActive')?>"
+    router-position="<?=$router->route('kanban.alterList')?>"
+    >
+    
     </div> 
 </div>
 

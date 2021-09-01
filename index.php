@@ -36,6 +36,8 @@ $router->get('/kanban/status/{fkPicture}', 'KanbanStatus:getAllStatus', 'kanban.
  */
 $router->post('/kanban/task/create', 'KanbanTask:createTask', 'kanban.taskCreate');
 $router->get('/kanban/task/{fkPicture}', 'KanbanTask:getAllTask', 'kanban.getAllTask');
+$router->post('/kanban/task/active', 'KanbanTask:alterActive', 'kanban.alterActive');
+$router->post('/kanban/task/position', 'KanbanTask:alterList', 'kanban.alterList');
 $router->dispatch();
 if ($router->error()) {
     echo 'ESSA ROTA NÃO EXISTE AINDA :( ' . $router->error();

@@ -59,4 +59,24 @@ class KanbanTask
 
         echo json_encode($dataTask);
     }
+
+    public function alterActive($data)
+    {
+        $idTask = $data['idTask'];
+        $fkStatus = $data['fkStatus'];
+
+        $task = $this->task->findById($idTask);
+        $task->fk_status = $fkStatus;
+        $taskId = $task->save();
+    }
+
+    public function alterList(array $data)
+    {
+        $idTask = $data['idTask'];
+        $position = $data['position'];
+        
+        $task = $this->task->findById($idTask);
+        $task->order_task = $position;
+        $taskId = $task->save();
+    }
 }

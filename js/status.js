@@ -75,7 +75,7 @@ function createStatus()
                             </div>
                         </div>
                     </div>
-                    <ul class="content__list m-0 p-0 pt-3 pb-3" id="ul__${value.id_status}" data-code="${value.id_status}">
+                    <ul class="content__list d-flex flex-column m-0 p-0 pt-3 pb-3" id="ul__${value.id_status}" data-code="${value.id_status}">
                         
                     </ul>
                     <div class="text-center mt-3">

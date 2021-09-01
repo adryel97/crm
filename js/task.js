@@ -4,6 +4,33 @@
  function pluginSortable() {
     $( ".content__list" ).sortable({
         connectWith: "ul",
+        receive: function (e, ui){ 
+          var codeId = ui.item[0].attributes["data-id"].value;
+          var codeFk = ui.item[0].parentElement.attributes["data-code"].value;
+          var itemOrder = $(this).sortable("toArray");
+          $.ajax({
+              type: "POST",
+              url: $('[router-active]').attr('router-active'),
+              data: {"idTask": codeId, "fkStatus": codeFk},
+              dataType: "json",
+              success: function (data) {
+                console.log(data);
+              }
+            });
+        },
+        stop: function(ev, ui) {
+          var itemOrder = $(this).sortable("toArray");
+          for (var i = 0; i < itemOrder.length; i++) {
+                var position = i 
+                var identificador = itemOrder[i];
+              $('#'+identificador).css({'order' : position}); $.ajax({
+                  type: "POST",
+                  url: $('[router-position]').attr('router-position'),
+                  data: {"position": position, "idTask": identificador},
+                  dataType: "json"
+                });
+            }
+        }
     })
  }
 
@@ -48,7 +75,7 @@ function taskHtml(data){
     $(data).each(function(index, value) { 
       $("#ul__"+value.fk_status).append(`
         <li class="mt-3 list-group-item bg-dark-secondary shadow-0 text-white rounded"
-        id="${value.id_task}  data-id="${value.id_task}">
+        id="${value.id_task}"  data-id="${value.id_task}" style="order: ${value.order_task}">
             <div class="d-flex justify-content-between align-items-center mb-2">
                 <p class="fw-bold m-0" for="title">
                 ${value.name_task}

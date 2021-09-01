@@ -63,11 +63,11 @@ CREATE TABLE `tbl_status` (
   `color_status` varchar(50) DEFAULT NULL,
   `date_status` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_status`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_status` */
 
-insert  into `tbl_status`(`id_status`,`fk_picture`,`fk_user`,`name_status`,`color_status`,`date_status`) values (1,3,1,'Novo titulo','purple','2021-08-31 15:11:51');
+insert  into `tbl_status`(`id_status`,`fk_picture`,`fk_user`,`name_status`,`color_status`,`date_status`) values (1,3,1,'Novo titulo','purple','2021-08-31 15:11:51'),(14,3,1,'a','primary','2021-09-01 09:43:01'),(15,3,1,'meu deus','cyan','2021-09-01 10:11:07'),(16,3,1,'oloko','red','2021-09-01 10:13:00');
 
 /*Table structure for table `tbl_task` */
 
@@ -80,12 +80,14 @@ CREATE TABLE `tbl_task` (
   `fk_user` int(11) DEFAULT NULL,
   `name_task` varchar(50) DEFAULT NULL,
   `account_task` mediumtext DEFAULT NULL,
-  `color_task` varchar(50) DEFAULT NULL,
   `date_task` timestamp NULL DEFAULT current_timestamp(),
+  `order_task` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_task` */
+
+insert  into `tbl_task`(`id_task`,`fk_status`,`fk_picture`,`fk_user`,`name_task`,`account_task`,`date_task`,`order_task`) values (1,1,3,1,'tarefa 1','tarefa 1','2021-09-01 11:10:46',1),(2,1,3,1,'New tarefa','','2021-09-01 11:45:27',0),(3,14,3,1,'aaa','sadasdsa','2021-09-01 11:55:28',0),(4,1,3,1,'aaa','sadasdsa','2021-09-01 11:55:29',0),(8,14,3,1,'Oloko meu','','2021-09-01 14:02:47',NULL);
 
 /*Table structure for table `tbl_user` */
 
