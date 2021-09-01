@@ -19,6 +19,12 @@ class KanbanStatus
         $this->startUser = User::startUser();
     }
 
+    /**
+     * @param array $data
+     * @return bolean
+     * or
+     * @return error
+     */
     public function createStatus(array $data)
     {
         try {
@@ -38,5 +44,18 @@ class KanbanStatus
         } catch (\Exception $e) {
             echo $e;
         }
+    }
+
+    /**
+     * @param array $data
+     * @return json
+     */
+    public function getAllStatus(array $data)
+    {
+        $fkPicture = $data['fkPicture'];
+        $fkUser =  $this->startUser->id_user;
+        $dataStatus =  $this->status->getStatus($fkPicture, $fkUser);
+
+        echo json_encode($dataStatus);
     }
 }

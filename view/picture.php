@@ -24,52 +24,14 @@
             </ul>
         </div>
     </div>
-    <div class="overflow-auto painelStatus d-flex">
-        <!-- HTML KANBAN --->
-              <div class="d-flex flex-nowrap gx-5 mt-5  pb-3">
-                <div class="m-2 rounded bg-dark-primary border-top border-3 border-green" style="width: 300px;" id="sortable">
-                    <div style="300px" class="p-3">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-white fw-bold m-0">Título</h4>
-                            <div class="btn btn-default shadow-none dropdown dropend">
-                              <a id="dropdownMyOptionStatus" class="text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-more-2-fill text-white"></i>
-                              </a>
-                                <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyOptionStatus">
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar status <i class="ri-edit-2-line text-yellow"></i></a>
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
-                                      Excluir status <i class="ri-delete-bin-line text-red"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="content__list m-0 p-0">
-                          <!-- LISTA -->
-                            <li class="list-group-item bg-dark-secondary shadow-0 text-white rounded">
-                              <div class="d-flex justify-content-between align-items-center mb-2">
-                                <p class="fw-bold m-0">Lista</p>
-                                <i class="ri-edit-2-line"></i>
-                              </div>
-                              <p class="m-0 text-truncate w-100" style="font-size: 14px">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam luctus molestie. Nullam nec imperdiet urna. Proin vestibulum tortor lacus, et interdum nisi accumsan placerat.
-                              </p>
-                              <span><i class="ri-eye-line"></i></span>
-                            </li>
-                            <!-- LISTA -->
-                        </ul>
-                        <div class="text-center mt-3">
-                          <button class="btn btn-default shadow-none">
-                            <h5 class="text-muted fw-bold m-0">Adicionar cartão +</h5>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <!-- HTML KANBAN --->
-    </div>
+    <div class="overflow-auto painelStatus d-flex" 
+    router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
+    router-status="<?=url('system')?>/kanban/status/<?= $idPicture ?>">
+      
+    </div> 
 </div>
 
-<!-- Modal -->
+<!-- Modal PICTURE-->
 <div class="modal fade" id="addPicture" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form id="formCreatePicture" action="<?=$router->route('kanban.pictureCreate')?>" class="modal-content bg-dark-primary border-0 rounded">
@@ -92,7 +54,36 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal TASK-->
+<div class="modal fade" id="addTask" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form id="formCreateTask" action="<?=$router->route('kanban.taskCreate')?>" class="modal-content bg-dark-primary border-0 rounded">
+      <div class="modal-header border-1 border-dark-secondary">
+        <h5 class="modal-title text-white">Adicionar nova tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="text" class="d-none" name="fkStatus">
+            <input type="text" class="d-none" name="fkPicture" value="<?= $idPicture ?>">
+            <input type="text" class="d-none" name="fkUser" value="<?=$user->id_user?>">
+            <div class="mb-4">
+                <label class="form-label text-white fw-bold">Título da tarefa</label>
+                <input type="text" name="nameTask" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Nova tarefa">
+            </div>
+            <div class="mb-4">
+              <label class="form-label text-white fw-bold">Descrição da tarefa</label>
+              <textarea name="accountTask" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Faça a descrição da tarefa aqui" id="accountTask" rows="5"></textarea>
+            </div>
+      </div>
+      <div class="modal-footer border-1 border-dark-secondary d-flex">
+        <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--task d-flex">Salvar</button>
+        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal STATUS-->
 <div class="modal fade" id="addStatus" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form id="formCreateStatus" action="<?=$router->route('kanban.statusCreate')?>" class="modal-content bg-dark-primary border-0 rounded">
@@ -144,7 +135,16 @@
 </div>
 
 <?php $this->start('js') ?>
-  <script src="<?=url()?>/js/picture.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+        loadStatus();
+        createStatus();
+        createTask();
+        pluginSortable();
+    });
+  </script>
   <script src="<?=url()?>/js/status.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="<?=url()?>/js/task.js"></script>
+  <script src="<?=url()?>/js/picture.js"></script>
 <?php $this->end('js') ?>
