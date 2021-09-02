@@ -1,4 +1,5 @@
 <?php
+
 session_cache_limiter('private_no_expire');
 session_start();
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');

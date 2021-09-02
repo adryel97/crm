@@ -12,7 +12,6 @@ $router->namespace('App\Controller');
 $router->get('/', 'LoginUser:viewLogin', 'login.index');
 $router->get('/register', 'RegisterUser:viewRegister');
 $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.user');
-
 /**
  * System router
  */
@@ -21,6 +20,9 @@ $router->namespace('App\Controller')->group('system');
  * LOGIN ONLINE
  */
 $router->post('/', 'LoginUser:loginUser', 'login.user');
+
+
+$router->get('/dashboard', 'CrmDashboard:viewDashboard');
 /**
  * PICTURE
  */
