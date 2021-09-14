@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Model\User;
 use League\Plates\Engine;
-use App\Controller\CrmDashboard;
 
 class LoginUser
 {
@@ -15,11 +14,16 @@ class LoginUser
         $this->view->addData(['router' => $router]);
         $this->router = $router;
         $this->user = new User();
-        $this->dashboard = new CrmDashboard();
     }
     public function viewLogin()
     {
-        echo $this->view->render('login');
+        if (isset($_SESSION['logged'])) {
+            $_SESSION['logged'] = true;
+            $this->router->redirect($this->router->route('system.dashboard'));
+        } else {
+            echo $this->view->render('login');
+            exit;
+        }
     }
 
     public function loginUser($data)
@@ -32,9 +36,11 @@ class LoginUser
 
         if ($login == true) {
             $_SESSION['logged'] = true;
-            $this->dashboard->viewDashboard();
+            $this->router->redirect($this->router->route('system.dashboard'));
         } else {
             $this->router->redirect(url());
+            session_unset();
+            session_destroy();
         }
     }
 }

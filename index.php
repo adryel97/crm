@@ -22,7 +22,7 @@ $router->namespace('App\Controller')->group('system');
 $router->post('/', 'LoginUser:loginUser', 'login.user');
 
 
-$router->get('/dashboard', 'CrmDashboard:viewDashboard');
+$router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
 /**
  * PICTURE
  */
