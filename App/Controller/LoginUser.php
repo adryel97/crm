@@ -28,24 +28,13 @@ class LoginUser
         $_SESSION['password'] = $data['password'];
         $_SESSION['logged'] = $_SESSION['logged'] ?? false;
 
-        $this->dashboard->viewDashboard();
+        $login = $this->user->conectUser($_SESSION['email'], md5($_SESSION['password']));
 
-        if ($_SESSION['logged'] == false) {
-            exit;
-        }
-        /*
-        $_SESSION['email'] = $data['email'];
-        $_SESSION['password'] = $data['password'];
-        $_SESSION['logged'] = $_SESSION['logged'] ?? false;
-
-        $login = $this->user->conectUser($_SESSION['email'], $_SESSION['password']);
-
-        if ($_SESSION['logged'] == true) {
-            $user = User::startUser();
-            echo $this->view->render('dashboard', ['user' => $user]);
+        if ($login == true) {
+            $_SESSION['logged'] = true;
+            $this->dashboard->viewDashboard();
         } else {
             $this->router->redirect(url());
         }
-        */
     }
 }

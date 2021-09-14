@@ -21,11 +21,13 @@ class KanbanPicture
 
     public function viewPicture($data)
     {
-        $id = $data['id'];
-        echo $this->view->render('picture', [
-            'user'=>$this->startUser,
-            'idPicture' => $id,
-        ]);
+        if ($_SESSION['logged'] == true) {
+            $id = $data['id'];
+            echo $this->view->render('picture', [
+                'user'=> $this->startUser,
+                'idPicture' => $id,
+            ]);
+        }
     }
 
     /**

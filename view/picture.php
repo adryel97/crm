@@ -1,4 +1,5 @@
-<?php $this->layout('_templateSystem');?>
+<?php $this->layout('_templateSystem');
+?>
 <div class="mt-5">
     <div class="d-flex">
         <button class="btn btn-primary text-white fw-bold pt-2 pb-2 me-2" data-bs-toggle="modal" data-bs-target="#addStatus">Adicionar novo status</button>

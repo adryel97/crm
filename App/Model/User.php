@@ -26,16 +26,14 @@ class User extends DataLayer
         $content = Connect::getInstance();
         $con = $content->prepare($sql);
         $con->bindValue(1, $pEmail);
-        $con->bindValue(2, md5($pPassword));
+        $con->bindValue(2, $pPassword);
         $con->execute();
 
         $userRow = $con->fetch(\PDO::FETCH_OBJ);
 
         if (isset($userRow->email_user) && isset($userRow->password_user)) {
-            if ($userRow->email_user == $pEmail && $userRow->password_user == md5($pPassword)) {
-                $_SESSION['email'] = $userRow->email_user;
-                $_SESSION['password'] = $userRow->password_user;
-                $_SESSION['logged'] = true;
+            if ($userRow->email_user == $pEmail && $userRow->password_user == $pPassword) {
+                return true;
             } else {
                 return false;
             }
@@ -50,7 +48,7 @@ class User extends DataLayer
         $content = Connect::getInstance();
         $con = $content->prepare($sql);
         $con->bindValue(1, $_SESSION['email']);
-        $con->bindValue(2, $_SESSION['password']);
+        $con->bindValue(2, md5($_SESSION['password']));
         $con->execute();
 
         $userRow = $con->fetch(\PDO::FETCH_OBJ);
