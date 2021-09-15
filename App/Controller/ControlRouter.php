@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use League\Plates\Engine;
 
-class CrmDashboard
+class ControlRouter
 {
     private $view;
 
@@ -14,12 +14,10 @@ class CrmDashboard
         $this->router = $router;
     }
 
-    public function viewDashboard()
+    public function viewErrors($error)
     {
-        if ($_SESSION['logged'] == true) {
-            echo $this->view->render('dashboard');
-        } else {
-            $this->router->redirect($this->router->route('login.index'));
-        }
+        echo $this->view->render('errors', [
+            'error'=> $error
+        ]);
     }
 }

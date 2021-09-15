@@ -38,9 +38,15 @@ class LoginUser
             $_SESSION['logged'] = true;
             $this->router->redirect($this->router->route('system.dashboard'));
         } else {
-            $this->router->redirect(url());
+            $this->router->redirect($this->router->route('login.index'));
             session_unset();
             session_destroy();
         }
+    }
+
+    public function logoutUser()
+    {
+        session_unset();
+        session_destroy();
     }
 }

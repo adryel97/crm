@@ -27,6 +27,8 @@ class KanbanPicture
                 'user'=> $this->startUser,
                 'idPicture' => $id,
             ]);
+        } else {
+            $this->router->redirect($this->router->route('login.index'));
         }
     }
 

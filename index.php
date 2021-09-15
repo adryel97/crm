@@ -10,18 +10,27 @@ $router = new Router(ROOT);
  */
 $router->namespace('App\Controller');
 $router->get('/', 'LoginUser:viewLogin', 'login.index');
+/**
+ * REGISTER USER
+ */
 $router->get('/register', 'RegisterUser:viewRegister');
 $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.user');
 /**
+ * ERRORS
+ */
+$router->get('/ops/{errorcode}', 'ControlRouter:viewErrors');
+/**
  * System router
  */
+$router->post('/', 'LoginUser:logoutUser', 'logout.user');
 $router->namespace('App\Controller')->group('system');
 /**
  * LOGIN ONLINE
  */
 $router->post('/', 'LoginUser:loginUser', 'login.user');
-
-
+/**
+ * DASHBOARD
+ */
 $router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
 /**
  * PICTURE
@@ -42,5 +51,5 @@ $router->post('/kanban/task/active', 'KanbanTask:alterActive', 'kanban.alterActi
 $router->post('/kanban/task/position', 'KanbanTask:alterList', 'kanban.alterList');
 $router->dispatch();
 if ($router->error()) {
-    echo 'ESSA ROTA NÃO EXISTE AINDA :( ' . $router->error();
+    $router->redirect("/ops/{$router->error()}");
 }

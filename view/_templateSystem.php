@@ -42,22 +42,28 @@
                         </li>
                         <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
                             <a href="#" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
-                            <i class="ri-shopping-cart-2-line fa-lg"></i>
+                                <i class="ri-shopping-cart-2-line fa-lg"></i>
                                 <span class="form-text text-white">Vendas</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
                 
-                <header class="bg-dark-primary rounded head__header">
-
+                <header class="bg-dark-primary rounded head__header d-flex align-items-center justify-content-end">
+                    <button id="logout" router="<?=$router->route('logout.user')?>" 
+                    class="btn btn-link text-white text-decoration-none shadow-none border-0 float-end d-flex align-items-center">
+                        <i class="ri-logout-box-line me-2"></i>
+                        Sair
+                    </button>
                 </header>
+
                 <section>
                     <?= $this->section('content');?>
                 </section>
             </div>
         </div>
         <script src="<?=url()?>/js/config-bootstrap.js"></script>
+        <script src="<?=url()?>/js/login.js"></script>
         <?= $this->section("js");?>
     </body>
 </html>
