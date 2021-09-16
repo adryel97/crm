@@ -35,8 +35,10 @@ $router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
 /**
  * PICTURE
  */
-$router->get('/kanban/picture/{id}', 'KanbanPicture:viewPicture', 'kanban.picture');
+$router->get('/kanban/picture', 'KanbanPicture:viewPicture', 'kanban.picture');
+$router->get('/kanban/picture/{id}', 'KanbanPicture:viewPictureUnique', 'kanban.pictureUnique');
 $router->post('/kanban/picture/create', 'KanbanPicture:createPicture', 'kanban.pictureCreate');
+$router->get('/kanban/picture/actual', 'KanbanPicture:actualPicture', 'kanban.pictureActual');
 /**
  * STATUS
  */
