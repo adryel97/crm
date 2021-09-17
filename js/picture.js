@@ -1,6 +1,7 @@
 var root = window.location.protocol + '//' +window.location.hostname
 $(document).ready(function () {
     createPicture();
+    getPictures();
 });
 
 function createPicture()
@@ -18,7 +19,6 @@ function createPicture()
                 .addClass('disabled');
             },
             success: function (response) {
-                /*console.log(response);*/
                 updatePicture()
             },
             complete: function (){
@@ -31,17 +31,33 @@ function createPicture()
     });
 }
 
+function getPictures()
+{
+    $.ajax({
+        type: "GET",
+        url: root+"/system/kanban/picture/allPictures",
+        cache: false,
+        dataType: "json",
+        success: function (data) {
+            $.each(data, function (index, value) { 
+                 $('.list_pictures').append(`
+                 <a class="dropdown-item" href="${root}/system/kanban/picture/${value.name_picture}/${value.id_picture}">${value.name_picture}</a>
+                 `)
+            });
+        }
+    });
+}
+
 function updatePicture()
 {
     $.ajax({
         type: "GET",
-        url: "http://www.crm.local/system/kanban/picture/actual",
+        url: root+"/system/kanban/picture/actual",
         cache: false,
         dataType: "json",
         success: function (data) {
-            var routerPicture = `${root}/system/kanban/picture/${data}`
+            var routerPicture = `${root}/system/kanban/picture/${data[0].namePicture}/${data[0].idPicture}`
             window.location.href = routerPicture;
-            console.log(routerPicture);
         }
     });
 }

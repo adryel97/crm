@@ -17,17 +17,15 @@
                 <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar quadro <i class="ri-edit-box-line"></i></a></li>
                 <div class="dropdown dropend">
                     <a class="dropdown-item d-flex justify-content-between align-items-center" href="#" id="dropdownMyPicture" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meus Quadros <i class="ri-arrow-right-s-fill"></i></a>
-                    <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark  shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyPicture">
-                        <a class="dropdown-item" href="#">Quadro 1</a>
-                        <a class="dropdown-item" href="#">Quadro 2</a>
+                    <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark list_pictures shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyPicture">
+                        
                     </div>
                 </div>
             </ul>
         </div>
     </div>
-    <div class="wrapper1">
-        <div class="div1">
-        </div>
+    <div>
+        <h4 class="text-white mt-5"><?=$namePicture?></h4>
     </div>
     <div class="overflow-auto  painelStatus d-flex" 
     router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
@@ -107,6 +105,7 @@
                 <input type="text" name="status" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Título do status">
             </div>
             <div class="mb-4">
+            <label class="form-label text-white fw-bold">Cores</label>
               <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
                 <input value="primary" type="radio" class="btn-check colors__radio" name="btnradio" id="btnradio1" autocomplete="off" checked>
                 <label class="btn btn-primary p-3 pt-4 label__radio" for="btnradio1"></label>
@@ -150,16 +149,6 @@
         createStatus();
         createTask();
         pluginSortable();
-        $(function(){
-      $(".wrapper1").scroll(function(){
-            $(".wrapper2")
-                .scrollLeft($(".wrapper1").scrollLeft());
-        });
-        $(".wrapper2").scroll(function(){
-            $(".wrapper1")
-                .scrollLeft($(".wrapper2").scrollLeft());
-        });
-      });
     });
   </script>
   <script src="<?=url()?>/js/status.js"></script>

@@ -36,9 +36,10 @@ $router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
  * PICTURE
  */
 $router->get('/kanban/picture', 'KanbanPicture:viewPicture', 'kanban.picture');
-$router->get('/kanban/picture/{id}', 'KanbanPicture:viewPictureUnique', 'kanban.pictureUnique');
-$router->post('/kanban/picture/create', 'KanbanPicture:createPicture', 'kanban.pictureCreate');
+$router->get('/kanban/picture/allPictures', 'KanbanPicture:allPictures', 'kanban.allPictures');
+$router->get('/kanban/picture/{namePicture}/{id}', 'KanbanPicture:viewPictureUnique', 'kanban.pictureUnique');
 $router->get('/kanban/picture/actual', 'KanbanPicture:actualPicture', 'kanban.pictureActual');
+$router->post('/kanban/picture/create', 'KanbanPicture:createPicture', 'kanban.pictureCreate');
 /**
  * STATUS
  */
@@ -47,8 +48,8 @@ $router->get('/kanban/status/{fkPicture}', 'KanbanStatus:getAllStatus', 'kanban.
 /**
  * TASK
  */
-$router->post('/kanban/task/create', 'KanbanTask:createTask', 'kanban.taskCreate');
 $router->get('/kanban/task/{fkPicture}', 'KanbanTask:getAllTask', 'kanban.getAllTask');
+$router->post('/kanban/task/create', 'KanbanTask:createTask', 'kanban.taskCreate');
 $router->post('/kanban/task/active', 'KanbanTask:alterActive', 'kanban.alterActive');
 $router->post('/kanban/task/position', 'KanbanTask:alterList', 'kanban.alterList');
 $router->dispatch();

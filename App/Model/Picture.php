@@ -14,4 +14,16 @@ class Picture extends DataLayer
     {
         parent::__construct('tbl_picture', ['fk_user', 'name_picture'], 'id_picture', false);
     }
+
+    public function getPictures(int $idUser)
+    {
+        $sql = 'SELECT * FROM tbl_picture WHERE fk_user = ? ORDER BY date_picture DESC';
+        $content = Connect::getInstance();
+        $con = $content->prepare($sql);
+        $con->bindValue(1, $idUser);
+        $con->execute();
+        $response = $con->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $response;
+    }
 }
