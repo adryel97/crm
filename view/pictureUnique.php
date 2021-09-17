@@ -25,7 +25,11 @@
             </ul>
         </div>
     </div>
-    <div class="overflow-auto painelStatus d-flex" 
+    <div class="wrapper1">
+        <div class="div1">
+        </div>
+    </div>
+    <div class="overflow-auto  painelStatus d-flex" 
     router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
     router-status="<?=url('system')?>/kanban/status/<?= $idPicture ?>"
     router-active="<?=$router->route('kanban.alterActive')?>"
@@ -146,6 +150,16 @@
         createStatus();
         createTask();
         pluginSortable();
+        $(function(){
+      $(".wrapper1").scroll(function(){
+            $(".wrapper2")
+                .scrollLeft($(".wrapper1").scrollLeft());
+        });
+        $(".wrapper2").scroll(function(){
+            $(".wrapper1")
+                .scrollLeft($(".wrapper2").scrollLeft());
+        });
+      });
     });
   </script>
   <script src="<?=url()?>/js/status.js"></script>

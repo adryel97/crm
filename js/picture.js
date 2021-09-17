@@ -1,3 +1,4 @@
+var root = window.location.protocol + '//' +window.location.hostname
 $(document).ready(function () {
     createPicture();
 });
@@ -17,12 +18,14 @@ function createPicture()
                 .addClass('disabled');
             },
             success: function (response) {
-                console.log(response);
+                /*console.log(response);*/
+                updatePicture()
             },
             complete: function (){
                     $('.btn__save--picture')
                     .html('Salvar')
                     .removeClass('disabled');
+                    getPictureActual()
             }
         });
     });
@@ -36,7 +39,9 @@ function updatePicture()
         cache: false,
         dataType: "json",
         success: function (data) {
-            console.log(data);
+            var routerPicture = `${root}/system/kanban/picture/${data}`
+            window.location.href = routerPicture;
+            console.log(routerPicture);
         }
     });
 }

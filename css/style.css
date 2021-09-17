@@ -1,6 +1,7 @@
 html, body{
     overflow-x: hidden;
     background-color: #3d414b;
+    height: 100vh;
 }
 .container__content{
     padding-left: 150px;
