@@ -47,7 +47,7 @@ function createStatus()
     $('.painelStatus').empty();
     $(data).each(function(index, value) { 
       $('.painelStatus').append(`
-      <div class="float-left gx-5 mt-3  pb-3">
+      <div class="float-left gx-5 mt-3  pb-1">
             <div class="m-2 ms-0 rounded bg-dark-primary border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
                 <div style="width: 300px" class="p-3 pe-1">
                     <div class="d-flex justify-content-between align-items-center mb-3">
