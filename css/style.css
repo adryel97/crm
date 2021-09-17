@@ -49,3 +49,15 @@ input[name="btnradio"]:checked + label::before{
   ::-webkit-scrollbar-thumb:hover {
     background: #2B313B; 
   }
+
+
+.scroll__dark::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background-color: #2b313b;
+}
+
+.scroll__dark::-webkit-scrollbar-thumb {
+  background: #3d414b;
+  border-radius: 10px;
+}

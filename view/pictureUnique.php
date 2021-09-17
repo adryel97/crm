@@ -27,7 +27,7 @@
     <div>
         <h4 class="text-white mt-5"><?=$namePicture?></h4>
     </div>
-    <div class="overflow-auto  painelStatus d-flex" 
+    <div style="overflow-x: auto;" class="painelStatus d-flex" 
     router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
     router-status="<?=url('system')?>/kanban/status/<?= $idPicture ?>"
     router-active="<?=$router->route('kanban.alterActive')?>"

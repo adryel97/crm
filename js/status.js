@@ -48,8 +48,8 @@ function createStatus()
     $(data).each(function(index, value) { 
       $('.painelStatus').append(`
       <div class="float-left gx-5 mt-3  pb-3">
-            <div class="m-2 rounded bg-dark-primary border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
-                <div style="300px" class="p-3">
+            <div class="m-2 ms-0 rounded bg-dark-primary border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
+                <div style="width: 300px" class="p-3 pe-1">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="text-white fw-bold m-0">
                         ${value.name_status}
@@ -71,7 +71,7 @@ function createStatus()
                             </div>
                         </div>
                     </div>
-                    <ul class="content__list d-flex flex-column m-0 p-0 pt-3 pb-3" id="ul__${value.id_status}" data-code="${value.id_status}">
+                    <ul style="max-height: 52.6vh; overflow-y: auto;" class="content__list d-flex flex-column scroll__dark pe-2 m-0 p-0 pt-3 pb-3" id="ul__${value.id_status}" data-code="${value.id_status}">
                         
                     </ul>
                     <div class="text-center mt-3">
