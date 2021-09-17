@@ -63,9 +63,7 @@
       dataType: "json",
       complete: function (){
         loadTask();
-        $('#formCreateTask').each(function(){
-          $(this)[0].reset();
-      });
+        $('#accountTask, #nameTask').val('');
       }
     });
   });

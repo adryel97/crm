@@ -23,6 +23,12 @@
                 <nav class="bg-dark-primary nav__navgation rounded">
                     <ul class="p-0 text-center mt-5">
                         <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
+                            <a href="<?=$router->route('system.dashboard')?>" class="text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                                    <i class="ri-dashboard-2-line fa-lg"></i>
+                                    <span class="form-text text-white">Dashboard</span>
+                            </a>
+                        </li>   
+                        <li class="list-style-none border-bottom border-1 border-dark-secondary pb-3 pt-3">
                             <a href="" class="task text-white text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
                                     <span class="form-text text-white">Tarefas</span>

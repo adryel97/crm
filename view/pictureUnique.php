@@ -74,7 +74,7 @@
             <input type="text" class="d-none" name="fkUser" value="<?=$user->id_user?>">
             <div class="mb-4">
                 <label class="form-label text-white fw-bold">Título da tarefa</label>
-                <input type="text" name="nameTask" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Nova tarefa">
+                <input type="text" id="nameTask" name="nameTask" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Nova tarefa">
             </div>
             <div class="mb-4">
               <label class="form-label text-white fw-bold">Descrição da tarefa</label>

@@ -35,10 +35,6 @@ function createStatus()
                     $('.btn__save--status')
                     .html('Salvar')
                     .removeClass('disabled');
-
-                    $('#formCreateStatus').each(function(){
-                        $(this)[0].reset();
-                    });
             }
         });
     });
