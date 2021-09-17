@@ -55,12 +55,19 @@
                     </ul>
                 </nav>
                 
-                <header class="bg-dark-primary rounded head__header d-flex align-items-center justify-content-end">
-                    <button id="logout" router="<?=$router->route('logout.user')?>" 
-                    class="btn btn-link text-white text-decoration-none shadow-none border-0 float-end d-flex align-items-center">
-                        <i class="ri-logout-box-line me-2"></i>
-                        Sair
-                    </button>
+                <header class="bg-dark-primary rounded head__header d-flex align-items-center">
+                    <div class="w-50">
+                        <div>
+                            <p class="m-0 name__user--title text-white"></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end w-50">
+                        <button id="logout" router="<?=$router->route('logout.user')?>" 
+                        class="btn btn-link text-white text-decoration-none shadow-none border-0 float-end d-flex align-items-center">
+                            <i class="ri-logout-box-line me-2"></i>
+                            Sair
+                        </button>
+                    </div>
                 </header>
 
                 <section>

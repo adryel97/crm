@@ -29,6 +29,10 @@ $router->namespace('App\Controller')->group('system');
  */
 $router->post('/', 'LoginUser:loginUser', 'login.user');
 /**
+ * CONTROL TEMPLATE
+ */
+$router->get('/control/template', 'TemplateControl:viewControlUser', 'system.controlTemplate');
+/**
  * DASHBOARD
  */
 $router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
