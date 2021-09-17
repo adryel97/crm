@@ -12,7 +12,6 @@ function createUser(){
             data: $(this).serialize(),
             dataType: "json",
             success: function (response) {
-                
             }
         });
     });

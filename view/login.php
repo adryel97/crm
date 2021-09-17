@@ -2,7 +2,7 @@
 
 <div class="vw-100 vh-100 d-flex justify-content-center align-items-center">
         <div class="rounded border-top position-relative border-bottom border-primary border-2 bg-dark-primary" style="width: 400px">
-            <form method="post" action="<?=$router->route('login.user')?>" data-url="<?=$router->route('sistem.access')?>" id="loginUserForm" data-action="<?=$router->route('login.user')?>" class="p-4">
+            <form method="post" action="<?=$router->route('login.user')?>" id="loginUserForm" class="p-4">
                     <h4 class="fw-bold text-primary mb-4">Login</h4>
                     <div>
                         <div class="mb-4">

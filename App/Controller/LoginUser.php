@@ -17,8 +17,7 @@ class LoginUser
     }
     public function viewLogin()
     {
-        if (isset($_SESSION['logged'])) {
-            $_SESSION['logged'] = true;
+        if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
             $this->router->redirect($this->router->route('system.dashboard'));
         } else {
             echo $this->view->render('login');
