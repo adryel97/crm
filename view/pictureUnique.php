@@ -141,6 +141,56 @@
   </div>
 </div>
 
+
+<!-- Modal DELETE STATUS AVISO SE EXISTIR TAREFA-->
+<div class="modal fade" id="verificationDeleteStatus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content bg-dark-primary border-0 rounded">
+      <div class="modal-header border-1 border-dark-secondary">
+        <h5 class="modal-title text-white">Mover tarefas da status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <div class="text-center text-white">
+              <p>
+              <i class="fas fa-exchange-alt fa-2x"></i>
+              </p>
+              <p>
+                Antes de apagar o seu status, precisamos mover suas tarefas.
+              </p>
+            </div>
+      </div>
+      <div class="modal-footer border-1 border-dark-secondary d-flex">
+        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL DELETE STATUS SE NÃO EXISTIR TAREFA-->
+<div class="modal fade" id="deleteStatus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content bg-dark-primary border-0 rounded">
+      <div class="modal-header border-1 border-dark-secondary">
+        <h5 class="modal-title text-white">ATENÇÃO!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="text" class="d-none" name="idStatus">
+            <div class="text-center text-white">
+              <p>
+                Você deseja apagar este status? Esta ação não tem volta.
+              </p>
+            </div>
+      </div>
+      <div class="modal-footer border-1 border-dark-secondary d-flex">
+        <button type="button" class="btn pt-2 pb-2 btn-primary text-white btn__delete" data-bs-dismiss="modal">Sim</button>
+        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Não</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <?php $this->start('js') ?>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script>

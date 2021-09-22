@@ -1,4 +1,4 @@
-
+var root = window.location.protocol + '//' +window.location.hostname;
 /**
  * LOADS
  */
@@ -47,7 +47,7 @@ function createStatus()
     $('.painelStatus').empty();
     $(data).each(function(index, value) { 
       $('.painelStatus').append(`
-      <div class="float-left gx-5 mt-3  pb-1">
+      <div class="float-left gx-5 mt-3  pb-1" data-id-status="${value.id_status}">
             <div class="m-2 ms-0 rounded bg-dark-primary border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
                 <div style="width: 300px" class="p-3 pe-1">
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -64,7 +64,7 @@ function createStatus()
                                 </a>
                                 <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyOptionStatus">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar status <i class="ri-edit-2-line text-yellow"></i></a>
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                    <a onclick="verification(${value.id_status})" class="dropdown-item d-flex justify-content-between align-items-center" href="#">
                                         Excluir status <i class="ri-delete-bin-line text-red"></i>
                                     </a>
                                 </div>
@@ -92,4 +92,55 @@ function createStatus()
 function alterarValue(fk)
 {
   $('[name="fkStatus"]').val(fk);
+}
+
+function verification(idStatus)
+{
+    $.ajax({
+        type: "POST",
+        url: root + "/system/kanban/status/delete/check",
+        data: {"idStatus" : idStatus},
+        dataType: "json",
+        cache: false,
+        success: function (data) {
+            verificationDelete(data, idStatus);
+        }
+    });
+}
+
+function verificationDelete(data, idStatus)
+{
+    if(data == true){
+        var modalDelete = new bootstrap.Modal(document.getElementById('deleteStatus'), {
+            keyboard: false
+          })
+          modalDelete.show()
+        $('[name="idStatus"]').val(idStatus);
+        $('.btn__delete').click(function (e) { 
+            e.preventDefault();
+            deleteStatus(idStatus);
+        });
+
+    } else{
+        var modalDeleteAviso = new bootstrap.Modal(document.getElementById('verificationDeleteStatus'), {
+            keyboard: false
+          })
+          modalDeleteAviso.show()
+    }
+}
+
+function deleteStatus(idStatus)
+{
+    $.ajax({
+        type: "POST",
+        url: root + "/system/kanban/status/delete",
+        data: {"idStatus": idStatus},
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+        },
+        complete: function (){
+            $(`[data-id-status="${idStatus}"]`).hide();
+        }
+    });
 }

@@ -48,6 +48,8 @@ $router->post('/kanban/picture/create', 'KanbanPicture:createPicture', 'kanban.p
  * STATUS
  */
 $router->post('/kanban/status/create', 'KanbanStatus:createStatus', 'kanban.statusCreate');
+$router->post('/kanban/status/delete/check', 'KanbanStatus:checkDelete', 'kanban.checkDelete');
+$router->post('/kanban/status/delete', 'KanbanStatus:deleteStatus', 'kanban.deleteStatus');
 $router->get('/kanban/status/{fkPicture}', 'KanbanStatus:getAllStatus', 'kanban.getAllStatus');
 /**
  * TASK

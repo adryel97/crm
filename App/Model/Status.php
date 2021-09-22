@@ -27,4 +27,20 @@ class Status extends DataLayer
 
         return $response;
     }
+    
+    public function verificationStatus(int $idSatatus)
+    {
+        $sql = 'SELECT tbl_task.id_task, tbl_task.name_task FROM tbl_status LEFT JOIN  tbl_task ON tbl_status.id_status = tbl_task.fk_status WHERE tbl_status.id_status = ?';
+        $content = Connect::getInstance();
+        $con = $content->prepare($sql);
+        $con->bindValue(1, $idSatatus);
+        $con->execute();
+        $response = $con->fetch(\PDO::FETCH_ASSOC);
+
+        if ($response['id_task'] == null || $response['name_task'] == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

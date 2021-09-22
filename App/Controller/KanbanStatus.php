@@ -58,4 +58,27 @@ class KanbanStatus
 
         echo json_encode($dataStatus);
     }
+
+    public function checkDelete(array $data)
+    {
+        $verification = $this->status->verificationStatus($data['idStatus']);
+        if ($verification == true) {
+            /**
+             * Não pode
+             */
+            echo 'true';
+        } else {
+            /**
+             * pode excluir
+             */
+            echo 'false';
+        }
+    }
+
+    public function deleteStatus(array $data)
+    {
+        $status = ($this->status->findById($data['idStatus']));
+
+        $status->destroy();
+    }
 }
