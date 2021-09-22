@@ -33,7 +33,6 @@
     router-active="<?=$router->route('kanban.alterActive')?>"
     router-position="<?=$router->route('kanban.alterList')?>"
     >
-    
     </div> 
 </div>
 
