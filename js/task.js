@@ -18,18 +18,19 @@
               }
             });
         },
-        stop: function(ev, ui) {
-          var itemOrder = $(this).sortable("toArray");
-          for (var i = 0; i < itemOrder.length; i++) {
-                var position = i 
-                var identificador = itemOrder[i];
-              $('#'+identificador).css({'order' : position}); $.ajax({
-                  type: "POST",
-                  url: $('[router-position]').attr('router-position'),
-                  data: {"position": position, "idTask": identificador},
-                  dataType: "json"
-                });
-            }
+        update: function(event, ui) { 
+          var positionOrder = $(this).sortable('toArray');
+          for (var i = 0; i < positionOrder.length; i++) {
+            var position = Object.keys(positionOrder);
+            var identificador = positionOrder;
+            $('#'+identificador[i]).css({'order' : position[i]});
+            $.ajax({
+              type: "POST",
+              url: $('[router-position]').attr('router-position'),
+              data: {"position": position[i], "idTask": identificador[i]},
+              dataType: "json"
+            });
+          }
         }
     })
  }

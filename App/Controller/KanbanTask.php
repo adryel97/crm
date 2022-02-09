@@ -72,9 +72,13 @@ class KanbanTask
 
     public function alterList(array $data)
     {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+        
         $idTask = $data['idTask'];
         $position = $data['position'];
-        
+
         $task = $this->task->findById($idTask);
         $task->order_task = $position;
         $taskId = $task->save();

@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'ceb0c4c9c6f40cd2d9c4f783b6ccbaec7243b180',
     'name' => 'programador/crm',
   ),
   'versions' => 
@@ -31,39 +31,39 @@
     ),
     'guzzlehttp/guzzle' => 
     array (
-      'pretty_version' => '7.3.0',
-      'version' => '7.3.0.0',
+      'pretty_version' => '7.4.0',
+      'version' => '7.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '7008573787b430c1c1f650e3722d9bba59967628',
+      'reference' => '868b3571a039f0ebc11ac8f344f4080babe2cb94',
     ),
     'guzzlehttp/promises' => 
     array (
-      'pretty_version' => '1.4.1',
-      'version' => '1.4.1.0',
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '8e7d04f1f6450fef59366c399cfad4b9383aa30d',
+      'reference' => 'fe752aedc9fd8fcca3fe7ad05d419d32998a06da',
     ),
     'guzzlehttp/psr7' => 
     array (
-      'pretty_version' => '2.0.0',
-      'version' => '2.0.0.0',
+      'pretty_version' => '2.1.0',
+      'version' => '2.1.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1dc8d9cba3897165e16d12bb13d813afb1eb3fe7',
+      'reference' => '089edd38f5b8abba6cb01567c2a8aaa47cec4c72',
     ),
     'ipinfo/ipinfo' => 
     array (
-      'pretty_version' => 'v2.2.0',
-      'version' => '2.2.0.0',
+      'pretty_version' => 'v2.3.0',
+      'version' => '2.3.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'b64a122b9aa160d6320f8f85fed533282e1f6bb2',
+      'reference' => 'b8bee1b51490053333232ee9395d3fa982f10872',
     ),
     'league/plates' => 
     array (
@@ -76,12 +76,12 @@
     ),
     'programador/crm' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'ceb0c4c9c6f40cd2d9c4f783b6ccbaec7243b180',
     ),
     'psr/http-client' => 
     array (
@@ -167,12 +167,21 @@
     ),
     'sinergi/browser-detector' => 
     array (
-      'pretty_version' => '6.1.3',
-      'version' => '6.1.3.0',
+      'pretty_version' => '6.1.4',
+      'version' => '6.1.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '16cad9cafdd5bde8cc03d9ad4cc826988a67401e',
+      'reference' => '4927f7c2bedc48b68f183bd420aa3549c59e133b',
+    ),
+    'symfony/deprecation-contracts' => 
+    array (
+      'pretty_version' => 'v2.5.0',
+      'version' => '2.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
     ),
     'victorybiz/geoip-location' => 
     array (

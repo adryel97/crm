@@ -30,7 +30,7 @@ composer require ipinfo/ipinfo
 >>> $ip_address = '216.239.36.21';
 >>> $details = $client->getDetails($ip_address);
 
->>> $detail->city;
+>>> $details->city;
 Emeryville
 >>> $details->loc;
 37.8342,-122.2900
@@ -50,7 +50,7 @@ The `IPinfo->getDetails()` method accepts an IP address as an optional, position
 >>> $client = new IPinfo();
 >>> $ip_address = '216.239.36.21';
 >>> $details = $client->getDetails($ip_address);
->>> $detail->city;
+>>> $details->city;
 Emeryville
 >>> $details->loc;
 37.8342,-122.2900
@@ -154,6 +154,16 @@ It's possible to use a custom cache by creating a child class of the [CacheInter
 >>> $client = new IPinfo($access_token, $settings);
 ```
 
+#### Disabling the cache
+
+You may disable the cache by passing in a `cache_disabled` key in the settings:
+
+```
+>>> $access_token = '123456789abc';
+>>> $settings = ['cache_disabled' => true];
+>>> $client = new IPinfo($access_token, $settings);
+```
+
 ### Overriding HTTP Client options
 
 The IPinfo client constructor accepts a `timeout` key which is the request
@@ -186,6 +196,6 @@ There are official IPinfo client libraries available for many languages includin
 
 ### About IPinfo
 
-Founded in 2013, IPinfo prides itself on being the most reliable, accurate, and in-depth source of IP address data available anywhere. We process terabytes of data to produce our custom IP geolocation, company, carrier, privacy, hosted domains and IP type data sets. Our API handles over 20 billion requests a month for 100,000 businesses and developers.
+Founded in 2013, IPinfo prides itself on being the most reliable, accurate, and in-depth source of IP address data available anywhere. We process terabytes of data to produce our custom IP geolocation, company, carrier, privacy, hosted domains and IP type data sets. Our API handles over 40 billion requests a month for 100,000 businesses and developers.
 
 [![image](https://avatars3.githubusercontent.com/u/15721521?s=128&u=7bb7dde5c4991335fb234e68a30971944abc6bf3&v=4)](https://ipinfo.io/)
