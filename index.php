@@ -58,6 +58,8 @@ $router->get('/kanban/task/{fkPicture}', 'KanbanTask:getAllTask', 'kanban.getAll
 $router->post('/kanban/task/create', 'KanbanTask:createTask', 'kanban.taskCreate');
 $router->post('/kanban/task/active', 'KanbanTask:alterActive', 'kanban.alterActive');
 $router->post('/kanban/task/position', 'KanbanTask:alterList', 'kanban.alterList');
+$router->post('/kanban/task/getTask', 'KanbanTask:getTaskEdit', 'kanban.getTask');
+$router->post('/kanban/task/editTask', 'KanbanTask:taskEdit', 'kanban.taskEdit');
 $router->dispatch();
 if ($router->error()) {
     $router->redirect("/ops/{$router->error()}");

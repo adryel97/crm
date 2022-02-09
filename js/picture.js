@@ -2,6 +2,7 @@ var root = window.location.protocol + '//' +window.location.hostname
 $(document).ready(function () {
     createPicture();
     getPictures();
+    editTask();
 });
 
 function createPicture()

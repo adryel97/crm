@@ -61,3 +61,12 @@ input[name="btnradio"]:checked + label::before{
   background: #3d414b;
   border-radius: 10px;
 }
+
+.tasks__list:active,
+.tasks__list:hover{
+  cursor: grab;
+}
+
+.cursor__pointer{
+  cursor: pointer;
+}

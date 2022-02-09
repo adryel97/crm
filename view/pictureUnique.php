@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<!-- Modal TASK-->
+<!-- Modal CRIAR TASK-->
 <div class="modal fade" id="addTask" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <form id="formCreateTask" action="<?=$router->route('kanban.taskCreate')?>" class="modal-content bg-dark-primary border-0 rounded">
@@ -82,6 +82,36 @@
       </div>
       <div class="modal-footer border-1 border-dark-secondary d-flex">
         <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--task d-flex">Salvar</button>
+        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal EDITAR TASK-->
+<div class="modal fade" id="editTask" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form id="formEditarTask" action="<?=$router->route('kanban.taskEdit')?>" data-get-task="<?=$router->route('kanban.getTask')?>" class="modal-content bg-dark-primary border-0 rounded">
+      <div class="modal-header border-1 border-dark-secondary">
+        <h5 class="modal-title text-white">Editar tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="text" readonly name="fkStatusEdit" id="fkStatusEdit">
+            <input type="text" readonly name="fkPictureEdit" value="<?= $idPicture ?>">
+            <input type="text" readonly name="fkUserEdit" value="<?=$user->id_user?>">
+            <input type="text" readonly name="idTask" id="idTask">
+            <div class="mb-4">
+                <label class="form-label text-white fw-bold">Título da tarefa</label>
+                <input type="text" id="nameTaskEdit" name="nameTaskEdit" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Nova tarefa">
+            </div>
+            <div class="mb-4">
+              <label class="form-label text-white fw-bold">Descrição da tarefa</label>
+              <textarea name="accountTaskEdit" id="accountTaskEdit" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Faça a descrição da tarefa aqui" rows="5"></textarea>
+            </div>
+      </div>
+      <div class="modal-footer border-1 border-dark-secondary d-flex">
+        <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--taskEdit d-flex">Salvar</button>
         <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
     </form>

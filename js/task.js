@@ -69,6 +69,61 @@
     });
   });
 }
+
+/**
+ * Editar Task
+ */
+function editTask(){
+  $('#formEditarTask').submit(function (e) { 
+    e.preventDefault();
+    var data = $(this).serialize(); //pega o valor para alterar no banco
+    var dataEdit = $(this).serializeArray(); //pega o valor em array para editar a tarefa no status
+    var router = $(this).attr('action');
+    $.ajax({
+      type: "POST",
+      url: router,
+      data: data,
+      dataType: "json",
+      success: function (data) {
+        
+      }, 
+      complete: function (){
+        $(`.title__task-${dataEdit[3].value}`).text(dataEdit[4].value)
+        $(`.account__task-${dataEdit[3].value}`).text(dataEdit[5].value)
+      }
+    });
+  });
+}
+
+/**
+ * Pegar informações da tarefa para editar
+ */
+ function getDataTask(btn){
+    var codeStatus = $(btn).attr('data-fk-status'); //Codigo do status
+    var codeTask = $(btn).attr('data-id-task'); //Codigo da tarefa
+    var codePicture = $(btn).attr('data-fk-picture'); //Codigo do quadro
+    var codeUser = $(btn).attr('data-fk-user'); //Codigo do user
+
+    var routerGetStauts = $('#formEditarTask').attr('data-get-task'); //Rota para pegar a tarefa
+
+    /**
+     * Altera os valores do status
+     */
+    $('#fkStatusEdit').val(codeStatus);
+    $('#idTask').val(codeTask);
+
+    $.ajax({
+      type: "POST",
+      url: routerGetStauts,
+      data: {codeUser: codeUser, codeTask: codeTask, codePicture: codePicture},
+      dataType: "json",
+      success: function (data) {
+        $('#nameTaskEdit').val(data.name_task);
+        $('#accountTaskEdit').val(data.account_task);
+      }
+    });
+ }
+
  /**
   * HTML
   */
@@ -76,15 +131,22 @@ function taskHtml(data){
     $('.content__list').empty();
     $(data).each(function(index, value) { 
       $("#ul__"+value.fk_status).append(`
-        <li class="mt-3 list-group-item bg-dark-secondary shadow-0 text-white rounded"
-        id="${value.id_task}"  data-id="${value.id_task}" style="order: ${value.order_task}">
+        <li class="mt-3 list-group-item bg-dark-secondary shadow-0 text-white rounded tasks__list"
+        id="${value.id_task}"  data-id="${value.id_task}" style="order: ${value.order_task};">
             <div class="d-flex justify-content-between align-items-center mb-2">
-                <p class="fw-bold m-0" for="title">
+                <p class="fw-bold m-0 title__task-${value.id_task}" for="title">
                 ${value.name_task}
                 </p>
-                <i class="ri-edit-2-line"></i>
+                <i onclick="getDataTask(this)" 
+                data-id-task="${value.id_task}" 
+                data-fk-status="${value.fk_status}"
+                data-fk-picture="${value.fk_picture}"
+                data-fk-user="${value.fk_user}"
+                data-bs-toggle="modal" 
+                data-bs-target="#editTask" 
+                class="ri-edit-2-line cursor__pointer edit_task"></i>
             </div>
-            <p class="m-0 text-truncate w-100" style="font-size: 14px">
+            <p class="m-0 text-truncate w-100 account__task-${value.id_task}" style="font-size: 14px">
             ${value.account_task}
             </p>
             <span><i class="ri-eye-line"></i></span>
@@ -92,3 +154,5 @@ function taskHtml(data){
       `);
     })
   }
+
+  
