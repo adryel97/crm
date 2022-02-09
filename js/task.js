@@ -84,12 +84,21 @@ function editTask(){
       url: router,
       data: data,
       dataType: "json",
+      beforeSend: function () {
+          $('.btn__save--taskEdit').html(`
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span>Carregando...</span>
+          `).attr('disabled')
+      },
       success: function (data) {
         
       }, 
-      complete: function (){
+      complete: function (){ 
         $(`.title__task-${dataEdit[3].value}`).text(dataEdit[4].value)
         $(`.account__task-${dataEdit[3].value}`).text(dataEdit[5].value)
+        $('.btn__save--taskEdit').html(`
+            Salvar
+        `).removeAttr('disabled')
       }
     });
   });
@@ -130,6 +139,8 @@ function editTask(){
 function taskHtml(data){
     $('.content__list').empty();
     $(data).each(function(index, value) { 
+      var target = '#delete__'+value.id_task;
+      deleteTaskVerification(value.fk_user_received, target);
       $("#ul__"+value.fk_status).append(`
         <li class="mt-3 list-group-item bg-dark-secondary shadow-0 text-white rounded tasks__list"
         id="${value.id_task}"  data-id="${value.id_task}" style="order: ${value.order_task};">
@@ -150,9 +161,26 @@ function taskHtml(data){
             ${value.account_task}
             </p>
             <span><i class="ri-eye-line"></i></span>
+            <span id="delete__${value.id_task}"></span>
         </li>
       `);
     })
   }
 
-  
+  function deleteTaskVerification(data, target)
+  {
+    var btnDeletar = '<i class="ri-delete-bin-line text-red cursor__pointer">';
+    $.ajax({
+      type: "POST",
+      url: "http://www.crm.local/system/kanban/task/deleteTaskVerification",
+      data: {codeUser: data},
+      dataType: "json",
+      success: function (data) {
+        if(data == true){
+          $(target).html(btnDeletar);
+        } else {
+          $(target).empty();
+        }
+      }
+    });
+  }

@@ -72,6 +72,18 @@ class KanbanTask
         $taskUpdate = $task->save();
     }
 
+    public function deleteTaskVerification($data)
+    {
+        $codUser = $data['codeUser'];
+        
+        
+        if ($codUser == $this->startUser->id_user) {
+            echo 'true';
+        } else {
+            echo 'false';
+        }
+    }
+
     public function getTaskEdit($data)
     {
         $fkPicture = $_POST['codePicture'];

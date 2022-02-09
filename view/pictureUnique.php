@@ -97,10 +97,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-            <input type="text" readonly name="fkStatusEdit" id="fkStatusEdit">
-            <input type="text" readonly name="fkPictureEdit" value="<?= $idPicture ?>">
-            <input type="text" readonly name="fkUserEdit" value="<?=$user->id_user?>">
-            <input type="text" readonly name="idTask" id="idTask">
+            <input type="text" hidden readonly name="fkStatusEdit" id="fkStatusEdit">
+            <input type="text" hidden readonly name="fkPictureEdit" value="<?= $idPicture ?>">
+            <input type="text" hidden readonly name="fkUserEdit" value="<?=$user->id_user?>">
+            <input type="text" hidden readonly name="idTask" id="idTask">
             <div class="mb-4">
                 <label class="form-label text-white fw-bold">Título da tarefa</label>
                 <input type="text" id="nameTaskEdit" name="nameTaskEdit" class="form-control bg-dark-secondary border-0 p-3 text-white" placeholder="Nova tarefa">
@@ -111,7 +111,9 @@
             </div>
       </div>
       <div class="modal-footer border-1 border-dark-secondary d-flex">
-        <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--taskEdit d-flex">Salvar</button>
+        <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--taskEdit d-flex">
+          Salvar
+        </button>
         <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
     </form>

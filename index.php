@@ -60,6 +60,7 @@ $router->post('/kanban/task/active', 'KanbanTask:alterActive', 'kanban.alterActi
 $router->post('/kanban/task/position', 'KanbanTask:alterList', 'kanban.alterList');
 $router->post('/kanban/task/getTask', 'KanbanTask:getTaskEdit', 'kanban.getTask');
 $router->post('/kanban/task/editTask', 'KanbanTask:taskEdit', 'kanban.taskEdit');
+$router->post('/kanban/task/deleteTaskVerification', 'KanbanTask:deleteTaskVerification', 'kanban.deleteTaskVerification');
 $router->dispatch();
 if ($router->error()) {
     $router->redirect("/ops/{$router->error()}");
