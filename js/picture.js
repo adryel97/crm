@@ -1,4 +1,5 @@
 var root = window.location.protocol + '//' +window.location.hostname
+
 $(document).ready(function () {
     createPicture();
     getPictures();
@@ -42,7 +43,7 @@ function getPictures()
         success: function (data) {
             $.each(data, function (index, value) { 
                  $('.list_pictures').append(`
-                 <a class="dropdown-item" href="${root}/system/kanban/picture/${value.name_picture}/${value.id_picture}">${value.name_picture}</a>
+                 <a class="dropdown-item" href="${root}/system/kanban/picture/${slugify(value.name_picture, {lower: true})}/${value.id_picture}">${value.name_picture}</a>
                  `)
             });
         }
@@ -57,7 +58,7 @@ function updatePicture()
         cache: false,
         dataType: "json",
         success: function (data) {
-            var routerPicture = `${root}/system/kanban/picture/${data[0].namePicture}/${data[0].idPicture}`
+            var routerPicture = `${root}/system/kanban/picture/${slugify(data[0].namePicture, {lower: true})}/${data[0].idPicture}`
             window.location.href = routerPicture;
         }
     });

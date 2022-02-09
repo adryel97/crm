@@ -79,5 +79,6 @@
         <script src="<?=url()?>/js/login.js"></script>
         <script src="<?=url()?>/js/control-views.js"></script>
         <?= $this->section("js");?>
+        <script src="<?=url()?>/lib/slugify/slugify.js"></script>
     </body>
 </html>

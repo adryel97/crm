@@ -30,11 +30,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ceb0c4c9c6f40cd2d9c4f783b6ccbaec7243b180',
+    'reference' => 'ec82c07283e1247c9be03e3a4811099732143058',
     'name' => 'programador/crm',
   ),
   'versions' => 
   array (
+    'cocur/slugify' => 
+    array (
+      'pretty_version' => 'v4.1.0',
+      'version' => '4.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2611e6081dbbb05837a16ed339c0451923d4046e',
+    ),
     'coffeecode/datalayer' => 
     array (
       'pretty_version' => '1.1.8',
@@ -105,7 +114,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ceb0c4c9c6f40cd2d9c4f783b6ccbaec7243b180',
+      'reference' => 'ec82c07283e1247c9be03e3a4811099732143058',
     ),
     'psr/http-client' => 
     array (

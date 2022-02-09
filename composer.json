@@ -11,7 +11,8 @@
         "coffeecode/router": "^1.0",
         "league/plates": "^3.4",
         "sinergi/browser-detector": "^6.1",
-        "victorybiz/geoip-location": "^1.1"
+        "victorybiz/geoip-location": "^1.1",
+        "cocur/slugify": "^4.1"
     }, 
     "autoload": {
         "psr-4": {

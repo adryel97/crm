@@ -36,10 +36,12 @@ class KanbanPicture
         if ($_SESSION['logged'] == true) {
             $id = $data['id'];
             $namePicure = $data['namePicture'];
+            $picture = $this->picture->findById($id);
+
             echo $this->view->render('pictureUnique', [
                 'user'=> $this->startUser,
                 'idPicture' => $id,
-                'namePicture' => $namePicure
+                'namePicture' => $picture->name_picture
             ]);
         } else {
             $this->router->redirect($this->router->route('login.index'));

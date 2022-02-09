@@ -48,6 +48,7 @@ class ComposerStaticInit8385cadf8b5693e52fff61dfcf7000f3
         array (
             'CoffeeCode\\Router\\' => 18,
             'CoffeeCode\\DataLayer\\' => 21,
+            'Cocur\\Slugify\\' => 14,
         ),
         'A' => 
         array (
@@ -108,6 +109,10 @@ class ComposerStaticInit8385cadf8b5693e52fff61dfcf7000f3
         'CoffeeCode\\DataLayer\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/datalayer/src',
+        ),
+        'Cocur\\Slugify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
         ),
         'App\\' => 
         array (
