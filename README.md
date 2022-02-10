@@ -17,3 +17,13 @@
 - Abra o XAMPP e execute o APACHE e o MYSQL
 
 ### Estrutura de pastas
+  - App
+    - Controller - (views e controladores do site)
+    - Model - (backend, conexao com o banco de dados, autorização)
+  - config - (configuração de paginas de erros, conexao com banco de dados e variaveis constantes)
+  - css 
+  - js
+  - lib - (bibliotecas usadas no projeto)
+  - view - (template do sistema, template inicial e views)
+  - db_crm - (banco de dados)
+    
