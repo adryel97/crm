@@ -91,7 +91,7 @@ function editTask(){
           `).attr('disabled')
       },
       success: function (data) {
-        
+        console.log(data);
       }, 
       complete: function (){ 
         $(`.title__task-${dataEdit[3].value}`).text(dataEdit[4].value)
