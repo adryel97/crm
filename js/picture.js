@@ -1,5 +1,5 @@
 var root = window.location.protocol + '//' +window.location.hostname
-
+var pictureCurrent = location.href;
 $(document).ready(function () {
     createPicture();
     getPictures();
@@ -27,7 +27,7 @@ function createPicture()
                     $('.btn__save--picture')
                     .html('Salvar')
                     .removeClass('disabled');
-                    getPictureActual()
+                    getPictureActual();
             }
         });
     });

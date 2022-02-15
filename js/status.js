@@ -48,19 +48,19 @@ function createStatus()
     $(data).each(function(index, value) { 
       $('.painelStatus').append(`
       <div class="float-left gx-5 mt-3  pb-1" data-id-status="${value.id_status}">
-            <div class="m-2 ms-0 rounded bg-dark-primary border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
+            <div class="m-2 ms-0 rounded bg-white border-top border-3 border-${value.color_status}" style="width: 300px;" id="sortable${value.id_status}">
                 <div style="width: 300px" class="p-3 pe-1">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="text-white fw-bold m-0">
+                        <h5 class="text fw-bold m-0">
                         ${value.name_status}
                         </h5>
                         <div class="d-flex align-items-center">
-                            <a onclick="alterarValue(${value.id_status})" href="#" class="text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTask">
+                            <a onclick="alterarValue(${value.id_status})" href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTask">
                                 <i class="ri-add-line"></i>
                             </a>
                             <div class="btn btn-default shadow-none dropdown dropend">
                                 <a id="dropdownMyOptionStatus" class="text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-more-2-fill text-white"></i>
+                                <i class="ri-more-2-fill text"></i>
                                 </a>
                                 <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyOptionStatus">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar status <i class="ri-edit-2-line text-yellow"></i></a>

@@ -86,8 +86,8 @@ function editTask(){
       dataType: "json",
       beforeSend: function () {
           $('.btn__save--taskEdit').html(`
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          <span>Carregando...</span>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="visually">Loading...</span>
           `).attr('disabled')
       },
       success: function (data) {
@@ -112,6 +112,7 @@ function editTask(){
     var codeTask = $(btn).attr('data-id-task'); //Codigo da tarefa
     var codePicture = $(btn).attr('data-fk-picture'); //Codigo do quadro
     var codeUser = $(btn).attr('data-fk-user'); //Codigo do user
+    var codeUserReceived = $(btn).attr('data-fk-user-received'); //Codigo do user que criou a tarefa
 
     var routerGetStauts = $('#formEditarTask').attr('data-get-task'); //Rota para pegar a tarefa
 
@@ -120,6 +121,7 @@ function editTask(){
      */
     $('#fkStatusEdit').val(codeStatus);
     $('#idTask').val(codeTask);
+
 
     $.ajax({
       type: "POST",
@@ -141,21 +143,35 @@ function taskHtml(data){
     $(data).each(function(index, value) { 
       var target = '#delete__'+value.id_task;
       deleteTaskVerification(value.fk_user_received, target);
+      var strg = '';
+      var verificationUserEdit = () => {
+        if(value.fk_user_received != value.fk_user){
+            strg = '';
+            return strg;
+        } else {
+          strg = `
+          <i onclick="getDataTask(this)" 
+                data-id-task="${value.id_task}" 
+                data-fk-status="${value.fk_status}"
+                data-fk-picture="${value.fk_picture}"
+                data-fk-user="${value.fk_user}"
+                data-fk-user-received="${value.fk_user_received}"
+                data-bs-toggle="modal" 
+                data-bs-target="#editTask" 
+                class="ri-edit-2-line cursor__pointer edit_task"></i>
+          `;
+          return strg;
+        }
+      }
+      
       $("#ul__"+value.fk_status).append(`
-        <li class="mt-3 list-group-item bg-dark-secondary shadow-0 text-white rounded tasks__list"
+        <li class="mt-3 list-group-item bg-white filter-shadow rounded tasks__list border-3"
         id="${value.id_task}"  data-id="${value.id_task}" style="order: ${value.order_task};">
             <div class="d-flex justify-content-between align-items-center mb-2">
                 <p class="fw-bold m-0 title__task-${value.id_task}" for="title">
                 ${value.name_task}
                 </p>
-                <i onclick="getDataTask(this)" 
-                data-id-task="${value.id_task}" 
-                data-fk-status="${value.fk_status}"
-                data-fk-picture="${value.fk_picture}"
-                data-fk-user="${value.fk_user}"
-                data-bs-toggle="modal" 
-                data-bs-target="#editTask" 
-                class="ri-edit-2-line cursor__pointer edit_task"></i>
+                ${verificationUserEdit()}
             </div>
             <p class="m-0 text-truncate w-100 account__task-${value.id_task}" style="font-size: 14px">
             ${value.account_task}

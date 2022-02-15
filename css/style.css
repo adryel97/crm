@@ -1,6 +1,6 @@
 html, body{
     overflow-x: hidden;
-    background-color: #3d414b;
+    background-color: #e6edf3;
     height: 100vh;
 }
 .container__content{
@@ -21,6 +21,11 @@ html, body{
 .list-style-none{
   list-style: none;
 }
+
+.filter-shadow {
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
 input[name="btnradio"]:checked + label::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
