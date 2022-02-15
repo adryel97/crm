@@ -28,11 +28,16 @@
                                     <span class="form-text text-dark-secondary">Dashboard</span>
                             </a>
                         </li>   
-                        <li class="list-style-none border-1 border-white  pb-3 pt-3">
-                            <a href="" id="task__active" class="task text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                        <li class="list-style-none border-1 border-white  pb-3 pt-3 dropdown dropend">
+                            <a href="" id="task__active" class="task text-dark-secondary  text-decoration-none d-flex justify-content-center align-items-center flex-column"
+                            id="task__drop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
-                                    <span class="task_icon form-text text-dark-secondary">Tarefas</span>
+                                    <span class="task_icon form-text text-dark-secondary">CRM</span>
                             </a>
+                            <ul class="dropdown-menu list_pictures--menu"  aria-labelledby="task__drop">
+                                <li><a class="dropdown-item d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#addPicture" href="#">Criar quadro <i class="ri-artboard-line"></i></a></li>
+                                <li class="diver"></li>
+                            </ul>
                         </li>   
                         <li class="list-style-none border-1 border-white  pb-3 pt-3">
                             <a href="#" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
@@ -73,6 +78,28 @@
                     <?= $this->section('content');?>
                 </section>
             </div>
+        </div>
+        <!-- Modal PICTURE-->
+        <div class="modal fade" id="addPicture" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form id="formCreatePicture" action="<?=$router->route('kanban.pictureCreate')?>" class="modal-content bg-white border-0 rounded">
+            <div class="modal-header border-1 border-0">
+                <h5 class="modal-title">Criar novo quadro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                        <input type="text" name="fkUser" value="<?=$user->id_user?>">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Nome do quadro</label>
+                        <input type="text" name="picture" class="form-control p-3 text-white" placeholder="Novo quadro">
+                    </div>
+            </div>
+            <div class="modal-footer border-0 d-flex">
+                <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--picture d-flex">Salvar</button>
+                <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+            </form>
+        </div>
         </div>
         <script src="<?=url()?>/js/config-bootstrap.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/login.js?v=<?=time()?>"></script>
