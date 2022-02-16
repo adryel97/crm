@@ -5,6 +5,7 @@ use CoffeeCode\Router\Router;
 
 $router = new Router(ROOT);
 
+
 /**
  * Create user and logic login user
  */

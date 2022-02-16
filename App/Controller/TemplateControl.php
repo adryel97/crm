@@ -8,7 +8,7 @@ class TemplateControl
 {
     private $view;
 
-    public function __construct($router)
+    public function __construct()
     {
         $this->view = new Engine(__DIR__ . '/../../view', 'php');
         $this->router = $router;
@@ -21,5 +21,10 @@ class TemplateControl
     {
         $data = $this->startUser;
         echo json_encode($data);
+    }
+    public function userControl()
+    {
+        $data = $this->startUser;
+        return $data;
     }
 }

@@ -145,7 +145,7 @@ function taskHtml(data){
       deleteTaskVerification(value.fk_user_received, target);
       var strg = '';
       var verificationUserEdit = () => {
-        if(value.fk_user_received != value.fk_user){
+        if(value.fk_user_received != value.fk_user && value.fk_user_received != null){
             strg = '';
             return strg;
         } else {

@@ -76,7 +76,6 @@ class KanbanTask
     {
         $codUser = $data['codeUser'];
         
-        
         if ($codUser == $this->startUser->id_user) {
             echo 'true';
         } else {

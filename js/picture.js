@@ -2,8 +2,6 @@ var root = window.location.protocol + '//' +window.location.hostname
 var pictureCurrent = location.href;
 $(document).ready(function () {
     createPicture();
-    getPictures();
-    editTask();
 });
 
 function createPicture()
@@ -30,23 +28,6 @@ function createPicture()
                     getPictureActual();
             }
         });
-    });
-}
-
-function getPictures()
-{
-    $.ajax({
-        type: "GET",
-        url: root+"/system/kanban/picture/allPictures",
-        cache: false,
-        dataType: "json",
-        success: function (data) {
-            $.each(data, function (index, value) { 
-                 $('.list_pictures').append(`
-                 <a class="dropdown-item" href="${root}/system/kanban/picture/${slugify(value.name_picture, {lower: true})}/${value.id_picture}">${value.name_picture}</a>
-                 `)
-            });
-        }
     });
 }
 

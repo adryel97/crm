@@ -43,9 +43,11 @@ function getPicturesAll()
         cache: false,
         dataType: "json",
         success: function (data) {
-            console.log(data.length)
             if(data.length > 0){
-                $('.diver').html(`<li><hr class="dropdown-divider"></li>`);
+                $('.diver').html(`
+                <li><hr class="dropdown-divider"></li>
+                <li><h6 class="dropdown-header">MEUS QUADROS</h6></li>
+                `);
             }
             $.each(data, function (index, value) { 
                  $('.list_pictures--menu').append(`

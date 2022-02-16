@@ -4,26 +4,6 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
 <div class="mt-5 contents__user" data-user-code="<?=$idUser?>">
     <div class="d-flex">
         <button class="btn btn-primary text-white fw-bold pt-2 pb-2 me-2" data-bs-toggle="modal" data-bs-target="#addStatus">Adicionar novo status</button>
-        <div class="dropdown">
-            <button class="btn btn-dark-primary fw-bold pt-2 pb-2" type="button" id="dropdownPicture" data-bs-toggle="dropdown" aria-expanded="false">
-                Quadros <i class="ri-arrow-down-s-line"></i>
-            </button>
-            <ul style="--animate-duration: 0.2s;" class="shadow dropdown-menu dropdown-menu-dark  border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownPicture">
-                <li>
-                    <a class="dropdown-item d-flex justify-content-between align-items-center" 
-                    data-bs-toggle="modal" data-bs-target="#addPicture" href="#">
-                    Novo quadro <i class="ri-artboard-line"></i>
-                    </a>
-                </li>
-                <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar quadro <i class="ri-edit-box-line"></i></a></li>
-                <div class="dropdown dropend">
-                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#" id="dropdownMyPicture" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meus Quadros <i class="ri-arrow-right-s-fill"></i></a>
-                    <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark list_pictures shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyPicture">
-                        
-                    </div>
-                </div>
-            </ul>
-        </div>
     </div>
     <div>
         <h4 class="mt-5"><?=$namePicture?></h4>
@@ -231,8 +211,9 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
         createStatus();
         createTask();
         pluginSortable();
-        $('#task__active, .task_icon').removeClass('text-dark-secondary');
-        $('#task__active, .task_icon').addClass('text-primary');
+        editTask();
+        $('#task__active, .task_text').removeClass('text-dark-secondary');
+        $('#task__active, .task_text').addClass('text-primary');
     });
   </script>
   <script src="<?=url()?>/js/status.js?v=<?=time()?>"></script>

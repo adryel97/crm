@@ -29,6 +29,3 @@
     </form>
   </div>
 </div>
-<?php $this->start('js') ?>
-    <script src="<?=url()?>/js/picture.js"></script>
-<?php $this->end('js') ?>

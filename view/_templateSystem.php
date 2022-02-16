@@ -23,16 +23,16 @@
                 <nav class="bg-white nav__navgation rounded filter-shadow">
                     <ul class="p-0 text-center mt-5">
                         <li class="list-style-none border-1 border-white pb-3 pt-3">
-                            <a href="<?=$router->route('system.dashboard')?>" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                            <a href="<?=$router->route('system.dashboard')?>" id="dashboard__active" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                     <i class="ri-dashboard-2-line fa-lg"></i>
-                                    <span class="form-text text-dark-secondary">Dashboard</span>
+                                    <span class="form-text dashboard_text text-dark-secondary">Dashboard</span>
                             </a>
                         </li>   
                         <li class="list-style-none border-1 border-white  pb-3 pt-3 dropdown dropend">
                             <a href="" id="task__active" class="task text-dark-secondary  text-decoration-none d-flex justify-content-center align-items-center flex-column"
                             id="task__drop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
-                                    <span class="task_icon form-text text-dark-secondary">CRM</span>
+                                    <span class="task_text form-text text-dark-secondary">CRM</span>
                             </a>
                             <ul class="dropdown-menu list_pictures--menu"  aria-labelledby="task__drop">
                                 <li><a class="dropdown-item d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#addPicture" href="#">Criar quadro <i class="ri-artboard-line"></i></a></li>
@@ -88,10 +88,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                        <input type="text" name="fkUser" value="<?=$user->id_user?>">
+                        <input type="text" name="fkUser" class="d-none" value="<?=$idUser?>">
                     <div class="mb-4">
                         <label class="form-label fw-bold">Nome do quadro</label>
-                        <input type="text" name="picture" class="form-control p-3 text-white" placeholder="Novo quadro">
+                        <input type="text" name="picture" class="form-control p-3" placeholder="Novo quadro">
                     </div>
             </div>
             <div class="modal-footer border-0 d-flex">
@@ -104,7 +104,8 @@
         <script src="<?=url()?>/js/config-bootstrap.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/login.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/control-views.js?v=<?=time()?>"></script>
-        <?= $this->section("js");?>
         <script src="<?=url()?>/lib/slugify/slugify.js?v=<?=time()?>"></script>
+        <script src="<?=url()?>/js/picture.js?v=<?=time()?>"></script>
+        <?= $this->section("js");?>
     </body>
 </html>
