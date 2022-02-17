@@ -40,6 +40,7 @@ class KanbanTask
             $task->fk_user = $fkUser;
             $task->name_task = $nameTask;
             $task->account_task = $account;
+            $task->fk_user_received = $fkUser;
             $task->save();
 
             echo "true";

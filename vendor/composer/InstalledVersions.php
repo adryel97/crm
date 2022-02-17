@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ec82c07283e1247c9be03e3a4811099732143058',
+    'reference' => 'bd5bd72e850df227d7c66054f6ba70f7bf78f238',
     'name' => 'programador/crm',
   ),
   'versions' => 
@@ -114,7 +114,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ec82c07283e1247c9be03e3a4811099732143058',
+      'reference' => 'bd5bd72e850df227d7c66054f6ba70f7bf78f238',
     ),
     'psr/http-client' => 
     array (

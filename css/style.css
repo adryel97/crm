@@ -37,7 +37,7 @@ input[name="btnradio"]:checked + label::before{
 ::-webkit-scrollbar {
     height: 8px;
     width: 8px;
-    background-color: #3d414b;
+    background-color: #aab0b4;
   }
   /* Track */
   ::-webkit-scrollbar-track {
@@ -46,24 +46,24 @@ input[name="btnradio"]:checked + label::before{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #2B313B; 
+    background: #e6edf3; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #2B313B; 
+    background: #e6edf3; 
   }
 
 
 .scroll__dark::-webkit-scrollbar {
     height: 8px;
     width: 8px;
-    background-color: #2b313b;
+    background-color: #e6edf3;
 }
 
 .scroll__dark::-webkit-scrollbar-thumb {
-  background: #3d414b;
+  background: #aab0b4;
   border-radius: 10px;
 }
 

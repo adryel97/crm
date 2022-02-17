@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="<?=url()?>/node_modules/remixicon/fonts/remixicon.css">
     <script src="<?=url()?>/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <style>
+        html, body{
+            overflow-x: hidden;
+            background-color: #e6edf3;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <div class="vw-100 vh-100 bg-dark-secondary">
+    <div class="vw-100 vh-100">
         <?= $this->section('content');?>
     </div>
     <script src="<?=url()?>/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
