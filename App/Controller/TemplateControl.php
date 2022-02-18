@@ -8,7 +8,7 @@ class TemplateControl
 {
     private $view;
 
-    public function __construct()
+    public function __construct($router)
     {
         $this->view = new Engine(__DIR__ . '/../../view', 'php');
         $this->router = $router;
