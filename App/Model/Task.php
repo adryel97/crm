@@ -27,4 +27,22 @@ class Task extends DataLayer
 
         return $response;
     }
+
+    public function deleteTask(int $idTask)
+    {
+        /**
+         * Move task to table history
+         */
+        $sql = 'INSERT INTO tbl_task_history SELECT * FROM tbl_task WHERE id_task = ?';
+        $content = Connect::getInstance();
+        $con = $content->prepare($sql);
+        $con->bindValue(1, $idTask);
+        $con->execute();
+
+        $sql = 'DELETE FROM tbl_task WHERE id_task = ?';
+        $content = Connect::getInstance();
+        $con = $content->prepare($sql);
+        $con->bindValue(1, $idTask);
+        $con->execute();
+    }
 }

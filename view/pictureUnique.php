@@ -179,6 +179,32 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
   </div>
 </div>
 
+
+<!-- Modal DELETE TAREFA-->
+<div class="modal fade" id="deletarTask" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content border-0 rounded">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Tem certeza?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <div class="text-danger">
+              <input type="text" id="task__delete" hidden readonly>
+              <p>
+                Deseja apagar a tarefa <span class="name__task--delete fw-bold"></span> ?
+              </p>
+            </div>
+      </div>
+      <div class="modal-footer border-0 d-flex">
+        <button type="button" class="btn pt-2 pb-2 text-white btn-primary btn__delete--task" 
+        data-router="<?=$router->route('kanban.deleteTask')?>">Sim</button>
+        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Não</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <!-- MODAL DELETE STATUS SE NÃO EXISTIR TAREFA-->
 <div class="modal fade" id="deleteStatus" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -212,6 +238,7 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
         createTask();
         pluginSortable();
         editTask();
+        deleteTask()
         $('#task__active, .task_text').removeClass('text-dark-secondary');
         $('#task__active, .task_text').addClass('text-primary');
     });

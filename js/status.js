@@ -56,11 +56,11 @@ function createStatus()
                         </h5>
                         <div class="d-flex align-items-center">
                             <a onclick="alterarValue(${value.id_status})" href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTask">
-                                <i class="ri-add-line"></i>
+                                <i class="ri-add-line fa-lg"></i>
                             </a>
                             <div class="btn btn-default shadow-none dropdown dropend">
                                 <a id="dropdownMyOptionStatus" class="text-decoration-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-more-2-fill text"></i>
+                                <i class="ri-more-2-fill text fa-lg"></i>
                                 </a>
                                 <div style="--animate-duration: 0.2s;" class="dropdown-menu dropdown-menu-dark shadow border-0 animate__animated animate__zoomIn animate__pulse" aria-labelledby="dropdownMyOptionStatus">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Editar status <i class="ri-edit-2-line text-yellow"></i></a>

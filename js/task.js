@@ -142,7 +142,7 @@ function taskHtml(data){
     $('.content__list').empty();
     $(data).each(function(index, value) { 
       var target = '#delete__'+value.id_task;
-      deleteTaskVerification(value.fk_user_received, target);
+      deleteTaskVerification(value.fk_user_received, target, value.id_task, value.name_task);
       var strg = '';
       var verificationUserEdit = () => {
         if(value.fk_user_received != value.fk_user && value.fk_user_received != null){
@@ -183,9 +183,14 @@ function taskHtml(data){
     })
   }
 
-  function deleteTaskVerification(data, target)
+  function deleteTaskVerification(data, target, idTask, nameTask)
   {
-    var btnDeletar = '<i class="ri-delete-bin-line text-red cursor__pointer">';
+    var btnDeletar = `<i onclick="deleteTaskData(this)" 
+    data-id="${idTask}" 
+    data-name="${nameTask}" 
+    data-bs-toggle="modal" 
+    data-bs-target="#deletarTask"
+    class="ri-delete-bin-line text-red cursor__pointer">`;
     $.ajax({
       type: "POST",
       url: "http://www.crm.local/system/kanban/task/deleteTaskVerification",
@@ -194,9 +199,33 @@ function taskHtml(data){
       success: function (data) {
         if(data == true){
           $(target).html(btnDeletar);
+          $('.name__task--delete').text(nameTask);
         } else {
           $(target).empty();
         }
       }
+    });
+  }
+
+  function deleteTaskData(btn)
+  {
+    var idKey = $(btn).attr('data-id');
+    $('#task__delete').val(idKey);
+  }
+
+  function deleteTask()
+  {
+    $('.btn__delete--task').click(function (e) { 
+      e.preventDefault();
+      var data = {idTask: $('#task__delete').val()}
+      $.ajax({
+        type: "POST",
+        url: $(this).attr('data-router'),
+        data: data,
+        dataType: "json",
+        success: function (data) {
+          
+        }
+      });
     });
   }

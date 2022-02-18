@@ -84,6 +84,12 @@ class KanbanTask
         }
     }
 
+    public function deleteTask($data)
+    {
+        $idTask = $data['idTask'];
+        $this->task->deleteTask($idTask);
+    }
+
     public function getTaskEdit($data)
     {
         $fkPicture = $_POST['codePicture'];
