@@ -229,4 +229,4 @@ function taskHtml(data){
         }
       });
     });
-  }
+  } 
