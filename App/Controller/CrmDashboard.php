@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Model\User;
+use PhpUtils\RandString;
 use League\Plates\Engine;
 
 class CrmDashboard
@@ -24,5 +25,10 @@ class CrmDashboard
         } else {
             $this->router->redirect($this->router->route('login.index'));
         }
+    }
+
+    public function testRand()
+    {
+        echo RandString::getRandString(10);
     }
 }

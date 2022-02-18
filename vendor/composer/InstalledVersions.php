@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bd5bd72e850df227d7c66054f6ba70f7bf78f238',
+    'reference' => '972c7843ce73e8f5d0e8748ab8c2da12df11976b',
     'name' => 'programador/crm',
   ),
   'versions' => 
@@ -114,7 +114,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bd5bd72e850df227d7c66054f6ba70f7bf78f238',
+      'reference' => '972c7843ce73e8f5d0e8748ab8c2da12df11976b',
     ),
     'psr/http-client' => 
     array (
@@ -206,6 +206,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '4927f7c2bedc48b68f183bd420aa3549c59e133b',
+    ),
+    'sn01615/rand-string' => 
+    array (
+      'pretty_version' => 'v1.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '871ff33fd498287ee0e605dad3e2d4cc1e71be83',
     ),
     'symfony/deprecation-contracts' => 
     array (

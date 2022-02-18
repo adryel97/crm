@@ -33,6 +33,7 @@ class ComposerStaticInit8385cadf8b5693e52fff61dfcf7000f3
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
+            'PhpUtils\\' => 9,
         ),
         'L' => 
         array (
@@ -85,6 +86,10 @@ class ComposerStaticInit8385cadf8b5693e52fff61dfcf7000f3
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
+        'PhpUtils\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sn01615/rand-string/src',
         ),
         'League\\Plates\\' => 
         array (

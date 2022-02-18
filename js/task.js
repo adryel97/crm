@@ -223,8 +223,9 @@ function taskHtml(data){
         url: $(this).attr('data-router'),
         data: data,
         dataType: "json",
-        success: function (data) {
-          
+        complete: function (){
+          $('#'+ $('#task__delete').val()).hide();
+          bootstrap.Modal.getOrCreateInstance(document.getElementById('deletarTask')).hide()
         }
       });
     });

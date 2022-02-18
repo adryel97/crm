@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5beafa20c6fc9068b57aa02f0c47cfbf",
+    "content-hash": "db4a4b24222ea4603b66053e942c5309",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -1003,6 +1003,46 @@
                 "source": "https://github.com/sinergi/php-browser-detector/tree/6.1.4"
             },
             "time": "2021-09-23T13:51:44+00:00"
+        },
+        {
+            "name": "sn01615/rand-string",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sn01615/rand-string.git",
+                "reference": "871ff33fd498287ee0e605dad3e2d4cc1e71be83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sn01615/rand-string/zipball/871ff33fd498287ee0e605dad3e2d4cc1e71be83",
+                "reference": "871ff33fd498287ee0e605dad3e2d4cc1e71be83",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpUtils\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "YangLong",
+                    "email": "168119405@qq.com"
+                }
+            ],
+            "description": "Generate a random string",
+            "keywords": [
+                "random string"
+            ],
+            "support": {
+                "issues": "https://github.com/sn01615/rand-string/issues",
+                "source": "https://github.com/sn01615/rand-string/tree/v1.0"
+            },
+            "time": "2019-05-10T17:40:03+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
