@@ -16,6 +16,7 @@
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <?= $this->section("css");?>
 </head>
     <body>
         <div class="content__main">
@@ -55,6 +56,12 @@
                             <a href="#" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                 <i class="ri-shopping-cart-2-line fa-lg"></i>
                                 <span class="form-text text-dark-secondary">Vendas</span>
+                            </a>
+                        </li>
+                        <li  class="list-style-none border-1 border-white  pb-3 pt-3">
+                            <a id="calendar__active" href="<?=$router->route('calendar.viewCalendar')?>" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                                <i class="ri-calendar-todo-fill fa-lg"></i>
+                                <span class="form-text text-dark-secondary">Agenda</span>
                             </a>
                         </li>
                     </ul>

@@ -64,6 +64,11 @@ $router->post('/kanban/task/getTask', 'KanbanTask:getTaskEdit', 'kanban.getTask'
 $router->post('/kanban/task/editTask', 'KanbanTask:taskEdit', 'kanban.taskEdit');
 $router->post('/kanban/task/deleteTaskVerification', 'KanbanTask:deleteTaskVerification', 'kanban.deleteTaskVerification');
 $router->post('/kanban/task/deleteTask', 'KanbanTask:deleteTask', 'kanban.deleteTask');
+
+/**
+ * CALENDAR
+ */
+$router->get('/calendar', 'SystemCalendar:viewCalendar', 'calendar.viewCalendar');
 $router->dispatch();
 if ($router->error()) {
     $router->redirect("/ops/{$router->error()}");
