@@ -35,7 +35,7 @@
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
                                     <span class="task_text form-text text-dark-secondary">CRM</span>
                             </a>
-                            <ul style="--animate-duration: 0.2s;" class="dropdown-menu list_pictures--menu animate__animated animate__zoomIn animate__pulse"  aria-labelledby="task__drop">
+                            <ul style="--animate-duration: 0.2s;" class="dropdown-menu border-0 shadow list_pictures--menu animate__animated animate__zoomIn animate__pulse"  aria-labelledby="task__drop">
                                 <li><a class="dropdown-item d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#addPicture" href="#">Criar quadro <i class="ri-artboard-line"></i></a></li>
                                 <li class="diver"></li>
                             </ul>
