@@ -17,28 +17,6 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
     </div> 
 </div>
 
-<!-- Modal PICTURE-->
-<div class="modal fade" id="addPicture" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form id="formCreatePicture" action="<?=$router->route('kanban.pictureCreate')?>" class="modal-content bg-white border-0 rounded">
-      <div class="modal-header border-1 border-0">
-        <h5 class="modal-title">Criar novo quadro</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-                <input type="text" class="d-none" name="fkUser" value="<?=$user->id_user?>">
-            <div class="mb-4">
-                <label class="form-label fw-bold">Nome do quadro</label>
-                <input type="text" name="picture" class="form-control p-3 text-white" placeholder="Novo quadro">
-            </div>
-      </div>
-      <div class="modal-footer border-0 d-flex">
-        <button type="submit" class="btn pt-2 pb-2 text-white btn-primary btn__save--picture d-flex">Salvar</button>
-        <button type="button" class="btn pt-2 pb-2 btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </form>
-  </div>
-</div>
 
 <!-- Modal CRIAR TASK-->
 <div class="modal fade" id="addTask" tabindex="-1" aria-hidden="true">

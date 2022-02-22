@@ -22,12 +22,15 @@ function createPicture()
                     $('.btn__save--picture')
                     .html('Salvar')
                     .removeClass('disabled');
-                    getPictureActual();
+                    //getPictureActual();
             }
         });
     });
 }
 
+/**
+ * Ao criar o quadro ele vai diretamente para o quadro cadastrado
+ */
 function updatePicture()
 {
     $.ajax({

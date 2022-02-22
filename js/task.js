@@ -8,28 +8,37 @@
           var codeId = ui.item[0].attributes["data-id"].value;
           var codeFk = ui.item[0].parentElement.attributes["data-code"].value;
           var itemOrder = $(this).sortable("toArray");
+          /**
+           * quando alterar a tarefa de para outro status faz um update no banco
+           */
           $.ajax({
               type: "POST",
               url: $('[router-active]').attr('router-active'),
               data: {"idTask": codeId, "fkStatus": codeFk},
               dataType: "json",
               success: function (data) {
-                console.log(data);
+                //console.log(data);
               }
             });
         },
+        /**
+         * 
+         * @param {*} event 
+         * @param {*} ui 
+         * ao alterar a tarefa de posição faz um update da posição no banco
+         */
         update: function(event, ui) { 
           var positionOrder = $(this).sortable('toArray');
           for (var i = 0; i < positionOrder.length; i++) {
             var position = Object.keys(positionOrder);
             var identificador = positionOrder;
             $('#'+identificador[i]).css({'order' : position[i]});
-            $.ajax({
-              type: "POST",
-              url: $('[router-position]').attr('router-position'),
-              data: {"position": position[i], "idTask": identificador[i]},
-              dataType: "json"
-            });
+              $.ajax({
+                type: "POST",
+                url: $('[router-position]').attr('router-position'),
+                data: {"position": position[i], "idTask": identificador[i]},
+                dataType: "json"
+              });
           }
         }
     })
@@ -45,7 +54,7 @@
       url: $('[router-task]').attr('router-task'),
       dataType: "json",
       success: function (data) {
-        taskHtml(data);
+          taskHtml(data);
       }
     });
 }
@@ -142,8 +151,13 @@ function taskHtml(data){
     $('.content__list').empty();
     $(data).each(function(index, value) { 
       var target = '#delete__'+value.id_task;
-      deleteTaskVerification(value.fk_user_received, target, value.id_task, value.name_task);
       var strg = '';
+
+      deleteTaskVerification(value.fk_user_received, target, value.id_task, value.name_task);
+      /**
+       * 
+       * @returns Verifica se pode ou não editar, só pode editar caso a tarefa for de quem cadastrou
+       */
       var verificationUserEdit = () => {
         if(value.fk_user_received != value.fk_user && value.fk_user_received != null){
             strg = '';
@@ -183,6 +197,17 @@ function taskHtml(data){
     })
   }
 
+  /**
+   * 
+   * @param {*id de quem enviou} data 
+   * @param {*id do DOM} target 
+   * @param {*id da tarefa} idTask 
+   * @param {*nome da tarefa} nameTask 
+   * 
+   * Verifica se pode ou não apagar a tarefa
+   * 
+   * caso não pode apagar ele não aparece o botão para deletar
+   */
   function deleteTaskVerification(data, target, idTask, nameTask)
   {
     var btnDeletar = `<i onclick="deleteTaskData(this)" 
@@ -207,12 +232,21 @@ function taskHtml(data){
     });
   }
 
+  /**
+   * 
+   * @param {*} btn 
+   * 
+   * onclick altera o valor do input no modal
+   */
   function deleteTaskData(btn)
   {
     var idKey = $(btn).attr('data-id');
     $('#task__delete').val(idKey);
   }
 
+  /**
+   * Apaga a tarefa
+   */
   function deleteTask()
   {
     $('.btn__delete--task').click(function (e) { 
