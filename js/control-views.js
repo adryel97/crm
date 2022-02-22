@@ -1,10 +1,4 @@
 var root = window.location.protocol + '//' +window.location.hostname;
-$(document).ready(function () {
-    getUser()
-    getPicturesAll()
-});
-
-
 
 function getUser()
 {

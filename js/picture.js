@@ -1,8 +1,5 @@
 var root = window.location.protocol + '//' +window.location.hostname
 var pictureCurrent = location.href;
-$(document).ready(function () {
-    createPicture();
-});
 
 function createPicture()
 {

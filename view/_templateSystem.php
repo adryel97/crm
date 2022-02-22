@@ -108,11 +108,21 @@
             </form>
         </div>
         </div>
+         
         <script src="<?=url()?>/js/config-bootstrap.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/login.js?v=<?=time()?>"></script>
-        <script src="<?=url()?>/js/control-views.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/lib/slugify/slugify.js?v=<?=time()?>"></script>
+        <script src="<?=url()?>/js/control-views.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/picture.js?v=<?=time()?>"></script>
+        <script>
+            $(document).ready(function () {
+                getUser();
+                getPicturesAll();
+                createPicture();
+            });
+        </script> 
         <?= $this->section("js");?>
+
+        
     </body>
 </html>
