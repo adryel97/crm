@@ -16,6 +16,7 @@
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <?= $this->section("css");?>
 </head>
     <body>
@@ -35,11 +36,17 @@
                                     <i class="gg-display-spacing" style="height: 16px; width: 16px;"></i>
                                     <span class="task_text form-text text-dark-secondary">CRM</span>
                             </a>
-                            <ul style="--animate-duration: 0.2s;" class="dropdown-menu border-0 shadow list_pictures--menu animate__animated animate__zoomIn animate__pulse"  aria-labelledby="task__drop">
+                            <ul style="--animate-duration: 0.2s; z-index: 3" class="dropdown-menu border-0 shadow list_pictures--menu animate__animated animate__zoomIn animate__pulse"  aria-labelledby="task__drop">
                                 <li><a class="dropdown-item d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#addPicture" href="#">Criar quadro <i class="ri-artboard-line"></i></a></li>
                                 <li class="diver"></li>
                             </ul>
                         </li>   
+                        <li class="list-style-none border-1 border-white  pb-3 pt-3">
+                            <a id="store__active" href="<?=$router->route('system.store')?>" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
+                                 <i class="ri-car-line fa-lg"></i>
+                                <span class="form-text text-dark-secondary">Estoque</span>
+                            </a>
+                        </li>
                         <li class="list-style-none border-1 border-white  pb-3 pt-3">
                             <a href="#" class="text-dark-secondary text-decoration-none d-flex justify-content-center align-items-center flex-column">
                                 <i class="ri-group-line fa-lg"></i>

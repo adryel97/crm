@@ -21,7 +21,9 @@ html, body{
 .list-style-none{
   list-style: none;
 }
-
+.nowrap {
+  white-space:nowrap;
+}
 .filter-shadow {
   box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }

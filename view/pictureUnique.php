@@ -2,11 +2,11 @@
 $this->layout('_templateSystem');
 ?>
 <div class="mt-5 contents__user" data-user-code="<?=$idUser?>">
+    <div>
+      <h3 class="mt-5 mb-3 fw-bold"><?=$namePicture?></h3>
+    </div>
     <div class="d-flex">
         <button class="btn btn-primary text-white fw-bold pt-2 pb-2 me-2" data-bs-toggle="modal" data-bs-target="#addStatus">Adicionar novo status</button>
-    </div>
-    <div>
-        <h4 class="mt-5"><?=$namePicture?></h4>
     </div>
     <div style="overflow-x: auto;" class="painelStatus d-flex mb-2" 
     router-task="<?=url('system')?>/kanban/task/<?= $idPicture ?>" 
