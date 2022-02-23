@@ -36,8 +36,7 @@ $router->get('/control/template', 'TemplateControl:viewControlUser', 'system.con
 /**
  * DASHBOARD
  */
-$router->get('/dashboard', 'CrmDashboard:viewDashboard', 'system.dashboard');
-$router->get('/dashboard/teste', 'CrmDashboard:testRand', 'system.testRand');
+$router->get('/dashboard', 'SystemDashboard:viewDashboard', 'system.dashboard');
 /**
  * PICTURE
  */

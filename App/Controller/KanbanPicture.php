@@ -16,7 +16,7 @@ class KanbanPicture
         $this->picture = new Picture();
         $this->user = new User();
         $this->startUser = User::startUser();
-        $this->view->addData(['router' => $router, 'idUser' => $this->startUser->id_user]);
+        $this->view->addData(['router' => $router, 'idUser' => $this->startUser->id_user, 'title' => 'Tarefas']);
     }
 
     public function viewPicture()

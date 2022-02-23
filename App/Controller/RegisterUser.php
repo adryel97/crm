@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Model\User;
 use League\Plates\Engine;
+use PhpUtils\RandString;
 
 class RegisterUser
 {
@@ -37,6 +38,7 @@ class RegisterUser
             $password = md5($data['password']);
             $accept = $data['accept'];
             $birthDate = $data['birthDate'];
+            $code = RandString::getRandString(10);
 
             $user = $this->user;
             $user->name_user = $name;
@@ -44,6 +46,7 @@ class RegisterUser
             $user->password_user = $password;
             $user->accept_user = $accept;
             $user->birth_date_user = $birthDate;
+            $user->code_user = $code;
             $user->save();
 
             echo "true";

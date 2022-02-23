@@ -1,5 +1,5 @@
 <?php
-$this->layout('_templateSystem', ['title' => 'Tarefas']);
+$this->layout('_templateSystem');
 ?>
 <div class="mt-5 contents__user" data-user-code="<?=$idUser?>">
     <div class="d-flex">
@@ -16,7 +16,6 @@ $this->layout('_templateSystem', ['title' => 'Tarefas']);
     >
     </div> 
 </div>
-
 
 <!-- Modal CRIAR TASK-->
 <div class="modal fade" id="addTask" tabindex="-1" aria-hidden="true">
