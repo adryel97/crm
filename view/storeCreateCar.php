@@ -67,9 +67,19 @@ $this->layout('_templateSystem');
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="p-4">
+                <h5 class="text-primary fw-bold">Etapa 2</h5>
+                <p class="text-muted">Insira fotos para melhorar sua venda.</p>
+                <div style="width: 100%; height: 280px; " class="border rounded border-3"></div>
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary p-3 w-100">Selecionar fotos</button>
+                </div>
+            </div>
+        </div>
         <div class="col ">
             <div class="p-4">
-            <h5 class="text-primary fw-bold">Etapa 2</h5>
+            <h5 class="text-primary fw-bold">Etapa 3</h5>
             <p class="text-muted">Cadastre as condições do seu veículo. Quilometragem e valores.</p>
             <div class="mb-3">
                         <input type="text" class="form-control p-3" name="km" id="km" placeholder="Quilometragem">
@@ -98,14 +108,6 @@ $this->layout('_templateSystem');
                         </div>
                 </div>
                 
-            </div>
-        </div>
-        <div class="col">
-            <div class="p-4">
-                <div style="width: 100%; height: 280px; " class="border rounded border-3"></div>
-                <div class="mt-3">
-                    <button type="button" class="btn btn-primary p-3 w-100">Selecionar fotos</button>
-                </div>
             </div>
         </div>
     </div>
