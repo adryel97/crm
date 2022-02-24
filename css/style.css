@@ -28,6 +28,10 @@ html, body{
   box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
 
+.border-dotted {border-style: dotted !important;}
+.border-dashed {border-style: dashed !important;}
+.border-solid {border-style: solid !important;}
+
 input[name="btnradio"]:checked + label::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;

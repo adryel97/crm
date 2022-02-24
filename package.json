@@ -24,6 +24,7 @@
     "jquery-ui": "^1.12.1",
     "jquery-validation": "^1.19.3",
     "remixicon": "^2.5.0",
+    "select2-bootstrap-5-theme": "^1.2.0",
     "sweetalert2": "^11.4.0",
     "tui-calendar": "^1.15.3"
   }

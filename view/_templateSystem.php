@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="<?=url()?>/node_modules/css.gg/icons/all.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/remixicon/fonts/remixicon.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+
     <script src="<?=url()?>/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?=url()?>/node_modules/@popperjs/core/dist/umd/popper.js"></script>
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="<?=url()?>/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <?= $this->section("css");?>
 </head>
     <body>
