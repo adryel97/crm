@@ -123,6 +123,7 @@
         <script src="<?=url()?>/lib/slugify/slugify.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/control-views.js?v=<?=time()?>"></script>
         <script src="<?=url()?>/js/picture.js?v=<?=time()?>"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function () {
                 getUser();

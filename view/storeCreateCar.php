@@ -1,6 +1,24 @@
 <?php
 $this->layout('_templateSystem');
+$this->start('css');
 ?>
+<style>
+    .sortable { 
+        width: 100%;
+        height: 500px;
+        display: flex;
+        list-style: none;
+    }
+    .sortable li {
+        padding: 1px;
+        height: auto;
+        text-align: center;
+    }
+    .grid__foto {
+        
+    }
+</style>
+<?php $this->end('css'); ?>
 <section class="pb-5">
     <h3 class="mt-5 fw-bold mb-3">Cadastrar novo veículo</h3>
     <div class="rounded bg-white filter-shadow">
@@ -94,9 +112,42 @@ $this->layout('_templateSystem');
                 <div class="p-4">
                     <h5 class="text-primary fw-bold">Fotos do veículo</h5>
                     <p class="text-muted">Insira fotos para melhorar sua venda.</p>
-                    <div style="width: 100%; height: 205px; " class="border rounded border-3 border-dashed overflow-auto"></div>
+
+                    <ul style="width: 100%; height: 500px;" id='preview' class="m-0 p-3 row row-cols-3 sortable border rounded border-3 border-dashed overflow-auto">
+                        <li class="p-3 col grid__foto ">
+                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
+                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
+                                <div class="p-2 d-flex bg-white">
+                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
+                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 col grid__foto ">
+                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
+                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
+                                <div class="p-2 d-flex bg-white">
+                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
+                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 col grid__foto ">
+                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
+                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
+                                <div class="p-2 d-flex bg-white">
+                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
+                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
                     <div class="mt-3">
-                        <button type="button" class="btn btn-primary-lg text-primary p-3 w-100"><span class="fw-bold">Selecionar fotos</span> <i class="bi bi-camera fa-lg ms-2"></i></button>
+                        <label type="button" class="btn btn-primary-lg text-primary p-3 w-100">
+                            <span class="fw-bold">Selecionar fotos</span> <i class="bi bi-camera fa-lg ms-2"></i>
+                            <input type="file" id='files' name="files[]" multiple hidden>
+                        </label>
                     </div>
 
 
@@ -147,6 +198,10 @@ $this->layout('_templateSystem');
         $('#store__active, #store__active span').removeClass('text-dark-secondary');
         $('#store__active, #store__active span').addClass('text-primary');
     });
+
+    $(function() {
+    $(".sortable" ).sortable();
+});
 </script>
 <script src="<?=url()?>/js/store.js?v=<?=time()?>"></script>
 <?php $this->end('js');?>
