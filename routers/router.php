@@ -69,6 +69,10 @@ $router->post('/kanban/task/deleteTask', 'KanbanTask:deleteTask', 'kanban.delete
 $router->get('/store', 'SystemStore:viewStore', 'system.store');
 $router->get('/store/create', 'SystemStore:viewStoreCreateCar', 'system.createCar');
 /**
+ * DEBUG
+ */
+$router->get('/debugs', 'Debugs:debugs');
+/**
  * CALENDAR
  */
 $router->get('/calendar', 'SystemCalendar:viewCalendar', 'calendar.viewCalendar');

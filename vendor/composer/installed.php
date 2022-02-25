@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '972c7843ce73e8f5d0e8748ab8c2da12df11976b',
+    'reference' => '298e9770e451b10ca8bd66b40e8c86640a797347',
     'name' => 'programador/crm',
   ),
   'versions' => 
@@ -90,7 +90,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '972c7843ce73e8f5d0e8748ab8c2da12df11976b',
+      'reference' => '298e9770e451b10ca8bd66b40e8c86640a797347',
     ),
     'psr/http-client' => 
     array (
