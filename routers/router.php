@@ -21,7 +21,7 @@ $router->post('/register/createUser', 'RegisterUser:createUser', 'createUser.use
  */
 $router->get('/ops/{errorcode}', 'ControlRouter:viewErrors');
 /**
- * System router
+ * SYSTEM ROUTER
  */
 $router->post('/', 'LoginUser:logoutUser', 'logout.user');
 $router->namespace('App\Controller')->group('system');
