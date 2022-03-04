@@ -114,33 +114,6 @@ $this->start('css');
                     <p class="text-muted">Insira fotos para melhorar sua venda.</p>
 
                     <ul style="width: 100%; height: 500px;" id='preview' class="m-0 p-3 row row-cols-3 sortable border rounded border-3 border-dashed overflow-auto">
-                        <li class="p-3 col grid__foto ">
-                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
-                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
-                                <div class="p-2 d-flex bg-white">
-                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
-                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="p-3 col grid__foto ">
-                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
-                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
-                                <div class="p-2 d-flex bg-white">
-                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
-                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="p-3 col grid__foto ">
-                            <div class="rounded border-2 border-primary border overflow-hidden filter-shadow">
-                                <img class="w-100" style="object-fit: cover; height: 180px;" src="<?=url()?>/img/img-cars/civic.jpg">
-                                <div class="p-2 d-flex bg-white">
-                                    <a href="#" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
-                                    <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
 
                     <div class="mt-3">
@@ -195,6 +168,7 @@ $this->start('css');
 <script>
     $(document).ready(function () {
         changesLoad();
+        preview();
         $('#store__active, #store__active span').removeClass('text-dark-secondary');
         $('#store__active, #store__active span').addClass('text-primary');
     });

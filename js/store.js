@@ -156,3 +156,36 @@ function fipe(categoria, marca, modelo, ano)
         $('#value-fipe').html('R$---')
     }
 }
+
+function preview() 
+{
+    $('#files').change(function (e) { 
+        e.preventDefault();
+
+        if(this.files) {
+            var files = this.files.length;
+            for (let i = 0; i < files; i++) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $($.parseHTML(`
+                    <li class="p-3 col grid__foto ">
+                        <div class="rounded border-2 border-primary border overflow-hidden filter-shadow bg-white">
+                            <img class="w-100" style="object-fit: cover; height: 180px;" src="${event.target.result}">
+                            <div class="p-2 d-flex bg-white">
+                                <a href="#" onclick="removerImg(this)" class="text-decoration-none text-red"><i class="ri-delete-bin-6-line fa-lg"></i></a>
+                                <a href="#" class="text-decoration-none text-dark ms-2"><i class="ri-drag-move-2-line fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </li> 
+                    `)).appendTo('#preview');
+                }
+                reader.readAsDataURL(this.files[i]);
+            }
+        }
+    });
+}
+
+function removerImg(remove)
+{
+    $(remove).closest('li').remove();
+}

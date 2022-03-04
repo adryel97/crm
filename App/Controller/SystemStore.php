@@ -30,6 +30,7 @@ class SystemStore
             $this->router->redirect($this->router->route('login.index'));
         }
     }
+    
     public function viewStoreCreateCar()
     {
         if ($_SESSION['logged'] == true) {
