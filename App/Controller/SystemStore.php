@@ -46,25 +46,19 @@ class SystemStore
     {
     }
 
-    public function sendImageCar($data)
+    public function sendCar($data)
     {
         $data = $data['data'];
         $arrayFile = [];
+        
         for ($i=0; $i < count($data); $i++) {
             $img = $data[$i]['imagem'];
             $extensao = $data[$i]['extensao'];
-
             $folderPath = "img/upload-img-cars/";
-
             $image_parts = explode(";base64,", $img);
-
             $image_type_aux = explode("image/", $image_parts[0]);
-
             $image_type = $image_type_aux[1];
-
             $image_base64 = base64_decode($image_parts[1]);
-
-
             $dateFile = date('d-m-y');
             $timeFile = date('H-m-s');
 
@@ -72,25 +66,20 @@ class SystemStore
 
             $extensaoFilter = ["jpg", "jpeg", "png"];
 
-
             $teste = array('imgs' => $file);
             if (in_array($extensao, $extensaoFilter)) {
                 file_put_contents($file, $image_base64);
             }
-
             array_push($arrayFile, $file);
         }
 
         $jsonFiles = json_encode($arrayFile);
-        $this->sendDbCar($jsonFiles);
-    }
 
-    private function sendDbCar($data)
-    {
         $store = $this->store;
-        $store->images = $data;
+        $store->images = $jsonFiles;
         $store->save();
     }
+
 
     public function findCar()
     {
