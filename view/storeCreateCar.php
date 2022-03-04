@@ -54,10 +54,13 @@ $this->start('css');
                     </div>
                     <div class="mb-3 row row-cols-3">
                         <div class="col">
-                            <input type="text" class="form-control p-3" name="placa" id="placa" placeholder="Placa do veículo">
+                            <input type="text" class="form-control p-3" name="plate" id="plate" placeholder="Placa do veículo">
                         </div>
-                        <div class="col">
+                        <div class="col position-relative">
                             <input type="text" class="form-control p-3" name="color" id="color" placeholder="Cor do veículo">
+                            <div class="position-absolute rounded-circle overflow-hidden border border-2" style="top: 12px; right: 20px; width: 35px;height: 35px;">
+                            <input type="color" name="color-hexa" id="color-hexa" class="border-0" style="width: 30px;height: 30px; transform: scale(1.8);">
+                            </div>
                         </div>
                         <div class="col">
                             <select class="form-select p-3" name="port" id="port">
@@ -78,28 +81,28 @@ $this->start('css');
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="value-car">R$</span>
-                        <input type="text" class="form-control p-3" placeholder="Valor do veículo" aria-describedby="value-car">
+                        <input type="text" class="form-control p-3" name="value-car" id="value-car" placeholder="Valor do veículo" aria-describedby="value-car">
                     </div>
                     
                     <div class="mb-3 row row-cols-2">
                         <div class="col">
                             <div class="input-group">
-                                <span class="input-group-text" id="value-car">R$</span>
-                                <input type="text" class="form-control p-3" placeholder="Valor de oferta" aria-describedby="value-car" aria-describedby="valor-oferta">
+                                <span class="input-group-text" id="value-promotion">R$</span>
+                                <input type="text" class="form-control p-3" placeholder="Valor de oferta" aria-describedby="value-promotion" aria-describedby="value-promotion">
                             </div>
                             <div id="valor-oferta" class="form-text mt-0">Campos não é obrigatório.</div>
                         </div>
                         <div class="col">
                             <div class="input-group">
-                                <span class="input-group-text" id="value-car">R$</span>
-                                <input type="text" class="form-control p-3" placeholder="Valor de repasse" aria-describedby="value-car" aria-describedby="valor-repasse">
+                                <span class="input-group-text" id="valor-transference">R$</span>
+                                <input type="text" class="form-control p-3" placeholder="Valor de repasse" aria-describedby="valor-transference" aria-describedby="valor-transference">
                             </div>
                         </div>
                     </div>
                     <div class="mt-5 mb-3">
                         <h5 class="text-primary fw-bold">Observação do veículo</h5>
                         <p class="text-muted">Insira uma observação ou informações complementares.</p>
-                        <textarea rows="5" class="w-100 form-control" placeholder="Deixe sua observação aqui"></textarea>
+                        <textarea rows="5" class="w-100 form-control" placeholder="Deixe sua observação aqui" id="note-car" name="note-car"></textarea>
                     </div>
                     <div>
                         <button class="btn btn-success ps-4 pe-4 pt-3 pb-3 text-white fw-bold" id="btn--save__car">Salvar veículo</button>
