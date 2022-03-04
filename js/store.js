@@ -189,3 +189,65 @@ function removerImg(remove)
 {
     $(remove).closest('li').remove();
 }
+
+function saveCarTest()
+{
+    $('#btn--save__car').click(function (e) { 
+        e.preventDefault();
+        var imagens = $('#preview img');
+        var data = []
+        var extensao = ['png', 'jpg', 'jpeg']
+
+        for (let i = 0; i < imagens.length; i++) {
+            var img = imagens[i].src;
+            var extension = img.split(';')[0].split('/')[1];
+            data.push({
+                "imagem": img,
+                "extensao": extension
+            })
+        }
+        
+        for (let i = 0; i < data.length; i++) {
+            var verificar = data[i].extensao;
+            var response = false;
+            if(extensao.includes(verificar))
+            {
+                response = true;
+            } else {
+                response = false;
+            }
+        }
+
+        if (imagens.length > 0 && response == true) {                    
+            $.ajax({
+                type: "POST",
+                url: "http://www.crm.local/system/store/sendImage",
+                data: {data},
+                dataType: "json"
+            });
+        } else if(imagens.length <= 0){
+            alert('Error: Ops nenhuma imagem foi selecionada');
+        }
+        else {
+            alert('Error: Imagem não compatível');
+        }
+
+        console.log(data);
+    });
+}
+
+function findCars()
+{
+    $.ajax({
+        type: "GET",
+        url: "http://www.crm.local/system/store/getImages",
+        dataType: "json",
+        success: function (data) {
+            $.each(data, function (index, value) { 
+                 $('.teste').append(`
+                    <img src="http://www.crm.local/${value}" width="100px"></br>
+                 `);
+            });
+        }
+    });
+}

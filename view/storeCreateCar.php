@@ -75,9 +75,7 @@ $this->start('css');
                     <div class="mb-3">
                             <input type="text" class="form-control p-3" name="km" id="km" placeholder="Quilometragem">
                     </div>
-                    <div class="mb-3">
-                            <input type="text" class="form-control p-3" placeholder="Valor do veículo">
-                    </div>
+
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="value-car">R$</span>
                         <input type="text" class="form-control p-3" placeholder="Valor do veículo" aria-describedby="value-car">
@@ -104,7 +102,7 @@ $this->start('css');
                         <textarea rows="5" class="w-100 form-control" placeholder="Deixe sua observação aqui"></textarea>
                     </div>
                     <div>
-                        <button class="btn btn-success ps-4 pe-4 pt-3 pb-3 text-white fw-bold">Salvar veículo</button>
+                        <button class="btn btn-success ps-4 pe-4 pt-3 pb-3 text-white fw-bold" id="btn--save__car">Salvar veículo</button>
                     </div>
                 </div>
             </div>
@@ -164,11 +162,16 @@ $this->start('css');
         </div>
     </div>
 </section>
+<div class="teste">
+
+</div>
 <?php $this->start('js');?>
 <script>
     $(document).ready(function () {
         changesLoad();
         preview();
+        saveCarTest();
+        //findCars();
         $('#store__active, #store__active span').removeClass('text-dark-secondary');
         $('#store__active, #store__active span').addClass('text-primary');
     });

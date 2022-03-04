@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Model\User;
+use App\Model\Store;
 use League\Plates\Engine;
 
 class SystemStore
@@ -13,6 +14,7 @@ class SystemStore
         $this->view = new Engine(__DIR__ . '/../../view', 'php');
         $this->router = $router;
         $this->user = new User();
+        $this->store = new Store();
         $this->startUser = User::startUser();
         $this->view->addData([
             'router' => $router,
@@ -30,7 +32,7 @@ class SystemStore
             $this->router->redirect($this->router->route('login.index'));
         }
     }
-    
+
     public function viewStoreCreateCar()
     {
         if ($_SESSION['logged'] == true) {
@@ -38,5 +40,62 @@ class SystemStore
         } else {
             $this->router->redirect($this->router->route('login.index'));
         }
+    }
+
+    private function uploadImageCar($img, $i, $extensao)
+    {
+    }
+
+    public function sendImageCar($data)
+    {
+        $data = $data['data'];
+        $arrayFile = [];
+        for ($i=0; $i < count($data); $i++) {
+            $img = $data[$i]['imagem'];
+            $extensao = $data[$i]['extensao'];
+
+            $folderPath = "img/upload-img-cars/";
+
+            $image_parts = explode(";base64,", $img);
+
+            $image_type_aux = explode("image/", $image_parts[0]);
+
+            $image_type = $image_type_aux[1];
+
+            $image_base64 = base64_decode($image_parts[1]);
+
+
+            $dateFile = date('d-m-y');
+            $timeFile = date('H-m-s');
+
+            $file = $folderPath . uniqid().'-'.$dateFile.'_'.$timeFile.'.'.$extensao;
+
+            $extensaoFilter = ["jpg", "jpeg", "png"];
+
+
+            $teste = array('imgs' => $file);
+            if (in_array($extensao, $extensaoFilter)) {
+                file_put_contents($file, $image_base64);
+            }
+
+            array_push($arrayFile, $file);
+        }
+
+        $jsonFiles = json_encode($arrayFile);
+        $this->sendDbCar($jsonFiles);
+    }
+
+    private function sendDbCar($data)
+    {
+        $store = $this->store;
+        $store->images = $data;
+        $store->save();
+    }
+
+    public function findCar()
+    {
+        $store = $this->store;
+        $imgs = $store->find()->fetch();
+        echo $imgs->images;
     }
 }
