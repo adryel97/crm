@@ -14,9 +14,6 @@ $this->start('css');
         height: auto;
         text-align: center;
     }
-    .grid__foto {
-        
-    }
 </style>
 <?php $this->end('css'); ?>
 <section class="pb-5">

@@ -194,6 +194,7 @@ function removerImg(remove)
 function serializeData()
 {
     var category = $("#category").val();
+    var brand = $("#brand").val();
 }
 
 
