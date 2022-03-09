@@ -12,6 +12,6 @@ class Store extends DataLayer
      */
     public function __construct()
     {
-        parent::__construct('tbl_img_test', ['images'], 'id', false);
+        parent::__construct('tbl_car', ['name_car'], 'id', false);
     }
 }

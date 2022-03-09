@@ -4,6 +4,8 @@ namespace App\Controller;
 use App\Model\User;
 use App\Model\Store;
 use League\Plates\Engine;
+use Cocur\Slugify\Slugify;
+use PhpUtils\RandString;
 
 class SystemStore
 {
@@ -14,6 +16,7 @@ class SystemStore
         $this->view = new Engine(__DIR__ . '/../../view', 'php');
         $this->router = $router;
         $this->user = new User();
+        $this->slugify = new Slugify();
         $this->store = new Store();
         $this->startUser = User::startUser();
         $this->view->addData([
@@ -42,18 +45,24 @@ class SystemStore
         }
     }
 
-    private function uploadImageCar($img, $i, $extensao)
-    {
-    }
-
     public function sendCar($data)
     {
-        $data = $data['data'];
+        $dataImg = $data['dataImages'];
         $arrayFile = [];
-        
-        for ($i=0; $i < count($data); $i++) {
-            $img = $data[$i]['imagem'];
-            $extensao = $data[$i]['extensao'];
+        $formDataPost = $data['formData'];
+
+        $nameCar = $formDataPost['brand'] . ' ' . $formDataPost['model'];
+        $arrayForm = [
+            "nameCar" => $nameCar,
+            "nameCarSlug" => $this->slugify->slugify($nameCar),
+            "codCar" => RandString::getRandString(10),
+        ];
+
+        $resultForm = array_merge($formDataPost, $arrayForm);
+
+        for ($i=0; $i < count($dataImg); $i++) {
+            $img = $dataImg[$i]['imagem'];
+            $extensao = $dataImg[$i]['extensao'];
             $folderPath = "img/upload-img-cars/";
             $image_parts = explode(";base64,", $img);
             $image_type_aux = explode("image/", $image_parts[0]);
@@ -76,15 +85,26 @@ class SystemStore
         $jsonFiles = json_encode($arrayFile);
 
         $store = $this->store;
-        $store->images = $jsonFiles;
+        $store->category_car = $resultForm['category'];
+        $store->brand_car = $resultForm['brand'];
+        $store->model_car = $resultForm['model'];
+        $store->year_car = $resultForm['year'];
+        $store->plate_car = $resultForm['plate'];
+        $store->color_car = $resultForm['color'];
+        $store->color_hex_car = $resultForm['colorHexa'];
+        $store->port_car = $resultForm['port'];
+        $store->km_car = $resultForm['km'];
+        $store->value_car = $resultForm['valueCar'];
+        $store->value_promotion = $resultForm['valuePromotion'];
+        $store->value_transference = $resultForm['valueTransference'];
+        $store->note_car = $resultForm['noteCar'];
+        $store->photo_car = $jsonFiles;
+        $store->name_car = $resultForm['nameCar'];
+        $store->name_slug_car = $resultForm['nameCarSlug'];
+        $store->code_car = $resultForm['codCar'];
+        $store->code_brand_fipe_car = $resultForm['brandCod'];
+        $store->code_model_fipe_car = $resultForm['modelCod'];
+        $store->code_year_fipe_car = $resultForm['yearCod'];
         $store->save();
-    }
-
-
-    public function findCar()
-    {
-        $store = $this->store;
-        $imgs = $store->find()->fetch();
-        echo $imgs->images;
     }
 }

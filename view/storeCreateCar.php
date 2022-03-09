@@ -20,7 +20,7 @@ $this->start('css');
     <h3 class="mt-5 fw-bold mb-3">Cadastrar novo veículo</h3>
     <div class="rounded bg-white filter-shadow">
         <div class="row row-cols-2">
-            <div class="col">
+            <form class="col">
                 <div class="p-4 rounded">
                     <h5 class="text-primary fw-bold">Informações do veículo</h5>
                     <p class="text-muted">Cadastre as informações do veículo corretamente.</p>
@@ -62,11 +62,11 @@ $this->start('css');
                         <div class="col">
                             <select class="form-select p-3" name="port" id="port">
                                 <option value="">Portas</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
                             </select>
                         </div>
                     </div>
@@ -78,21 +78,21 @@ $this->start('css');
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="value-car">R$</span>
-                        <input type="text" class="form-control p-3" name="value-car" id="value-car" placeholder="Valor do veículo" aria-describedby="value-car">
+                        <input type="text" class="form-control p-3" name="value-car" id="val-car" placeholder="Valor do veículo" aria-describedby="value-car">
                     </div>
                     
                     <div class="mb-3 row row-cols-2">
                         <div class="col">
                             <div class="input-group">
                                 <span class="input-group-text" id="value-promotion">R$</span>
-                                <input type="text" class="form-control p-3" placeholder="Valor de oferta" aria-describedby="value-promotion" aria-describedby="value-promotion">
+                                <input type="text" class="form-control p-3" name="value-promotion" id="val-promotion" placeholder="Valor de oferta" aria-describedby="value-promotion" aria-describedby="value-promotion">
                             </div>
                             <div id="valor-oferta" class="form-text mt-0">Campos não é obrigatório.</div>
                         </div>
                         <div class="col">
                             <div class="input-group">
                                 <span class="input-group-text" id="valor-transference">R$</span>
-                                <input type="text" class="form-control p-3" placeholder="Valor de repasse" aria-describedby="valor-transference" aria-describedby="valor-transference">
+                                <input type="text" class="form-control p-3" name="value-transference" id="val-transference" placeholder="Valor de repasse" aria-describedby="value-transference" aria-describedby="valor-transference">
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ $this->start('css');
                         <button class="btn btn-success ps-4 pe-4 pt-3 pb-3 text-white fw-bold" id="btn--save__car">Salvar veículo</button>
                     </div>
                 </div>
-            </div>
+            </form>
             <div class="col">
                 <div class="p-4">
                     <h5 class="text-primary fw-bold">Fotos do veículo</h5>
@@ -170,7 +170,7 @@ $this->start('css');
     $(document).ready(function () {
         changesLoad();
         preview();
-        saveCarTest();
+        saveCar();
         //findCars();
         $('#store__active, #store__active span').removeClass('text-dark-secondary');
         $('#store__active, #store__active span').addClass('text-primary');

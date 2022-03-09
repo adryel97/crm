@@ -198,13 +198,50 @@ function serializeData()
 }
 
 
-function saveCarTest()
+function saveCar()
 {
     $('#btn--save__car').click(function (e) { 
         e.preventDefault();
         var imagens = $('#preview img');
         var dataImages = []
         var extensao = ['png', 'jpg', 'jpeg']
+
+        const category = $('#category').val();
+        const brand = $('#brand :selected').text();
+        const brandCod = $('#brand').val();
+        const model = $('#model :selected').text();
+        const modelCod = $('#model').val();
+        const year = $('#year :selected').text();
+        const plate = $('#plate').val();
+        const color = $('#color').val();
+        const colorHexa = $('#color-hexa').val();
+        const port = $('#port').val();
+        const km = $('#km').val();
+        const valueCar = $('#val-car').val();
+        const valuePromotion = $('#val-promotion').val();
+        const valueTransference = $('#val-transference').val();
+        const noteCar = $('#note-car').val();
+        const yearCod = $('#year').val();
+
+        const formData = {
+            "category":category,
+            "brand":brand,
+            "brandCod":brandCod,
+            "model":model,
+            "modelCod":modelCod,
+            "year":year,
+            "plate": plate,
+            "color":color,
+            "colorHexa":colorHexa,
+            "port":port,
+            "km":km,
+            "valueCar":valueCar,
+            "valuePromotion":valuePromotion,
+            "valueTransference":valueTransference,
+            "noteCar":noteCar,
+            "yearCod":yearCod
+        }
+
 
         for (let i = 0; i < imagens.length; i++) {
             var img = imagens[i].src;
@@ -215,7 +252,7 @@ function saveCarTest()
             })
         }
         
-        for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < dataImages.length; i++) {
             var verificar = dataImages[i].extensao;
             var response = false;
             if(extensao.includes(verificar))
@@ -238,24 +275,6 @@ function saveCarTest()
         }
         else {
             alert('Error: Imagem não compatível');
-        }
-
-        console.log(data);
-    });
-}
-
-function findCars()
-{
-    $.ajax({
-        type: "GET",
-        url: "http://www.crm.local/system/store/getImages",
-        dataType: "json",
-        success: function (data) {
-            $.each(data, function (index, value) { 
-                 $('.teste').append(`
-                    <img src="http://www.crm.local/${value}" width="100px"></br>
-                 `);
-            });
         }
     });
 }

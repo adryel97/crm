@@ -69,7 +69,6 @@ $router->post('/kanban/task/deleteTask', 'KanbanTask:deleteTask', 'kanban.delete
 $router->get('/store', 'SystemStore:viewStore', 'system.store');
 $router->get('/store/create', 'SystemStore:viewStoreCreateCar', 'system.createCar');
 $router->post('/store/sendCar', 'SystemStore:sendCar', 'system.sendCar');
-$router->get('/store/getImages', 'SystemStore:findCar', 'system.sendImageCar');
 /**
  * DEBUG
  */
