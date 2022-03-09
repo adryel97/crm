@@ -43,9 +43,11 @@ CREATE TABLE `tbl_car` (
   `code_model_fipe_car` varchar(20) DEFAULT NULL,
   `code_year_fipe_car` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id_car`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tbl_car` */
+
+insert  into `tbl_car`(`id_car`,`category_car`,`brand_car`,`model_car`,`year_car`,`plate_car`,`color_car`,`color_hex_car`,`port_car`,`km_car`,`value_car`,`value_promotion`,`value_transference`,`note_car`,`photo_car`,`name_car`,`name_slug_car`,`code_car`,`code_brand_fipe_car`,`code_model_fipe_car`,`code_year_fipe_car`) values (1,'carros','ASTON MARTIN','DB9 Coupe 6.0 V12 510cv',2016,'RKY-1192','Vermelho','#ff0000','2','0','1336579.00','1336579.00','1336579.00','Top de linha sem reclamação, e zero bala;','[\"img\\/upload-img-cars\\/622910ab91f71-09-03-22_17-03-11.png\",\"img\\/upload-img-cars\\/622910ab92274-09-03-22_17-03-11.png\",\"img\\/upload-img-cars\\/622910ab924b9-09-03-22_17-03-11.png\"]','ASTON MARTIN DB9 Coupe 6.0 V12 510cv','aston-martin-db9-coupe-6-0-v12-510cv','X3VJJpFQlu','189','6906','2016-1');
 
 /*Table structure for table `tbl_history_protect` */
 
