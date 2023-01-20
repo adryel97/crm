@@ -1,4 +1,7 @@
 # CRM
+
+Este projeto não está finalizado
+
 ### Configuração
 - Fazer download do xampp com PHP na versão 7.4 [Xampp](https://www.apachefriends.org/pt_br/download.html)
 - Configurar o arquivo na pasta C:\xampp\apache\conf\extra\httpd-vhosts.conf 
